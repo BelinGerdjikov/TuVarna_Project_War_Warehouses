@@ -7,23 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.LoginWindowController">
    <children>
-      <Label layoutX="486.0" layoutY="20.0" text="Login Window">
+      <Label layoutX="489.0" layoutY="50.0" text="Login Window">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <PasswordField fx:id="PasswordF" layoutX="479.0" layoutY="234.0" />
-      <TextField fx:id="UsernameF" layoutX="479.0" layoutY="161.0" />
-      <Label layoutX="350.0" layoutY="165.0" text="Username" />
-      <Label layoutX="350.0" layoutY="238.0" text="Password" />
-      <Button layoutX="527.0" layoutY="313.0" mnemonicParsing="false" onAction="#OnLoginButton" text="Login" />
-      <Label fx:id="error" layoutX="437.0" layoutY="382.0">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
+      <TextField fx:id="UsernameF" layoutX="479.0" layoutY="179.0" />
+      <PasswordField fx:id="PasswordF" layoutX="479.0" layoutY="265.0" />
+      <Label layoutX="294.0" layoutY="183.0" text="Username" />
+      <Label layoutX="294.0" layoutY="269.0" text="Password" />
+      <Label fx:id="error" layoutX="408.0" layoutY="369.0" />
+      <Button layoutX="527.0" layoutY="319.0" mnemonicParsing="false" onAction="#OnLoginButton" text="Button" />
    </children>
 </AnchorPane>
