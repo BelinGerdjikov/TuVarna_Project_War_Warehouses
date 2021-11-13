@@ -90,6 +90,12 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -113,7 +119,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                bg.tu_varna.sit.group24.tu_varna_warehouses/bg.tu_varna.sit.group24.tu_varna_warehouses.Launcher
+                                bg.tu_varna.sit.group24.tu_varna_warehouses/bg.tu_varna.sit.group24.tu_varna_warehouses.application.Launcher
                             </mainClass>
                         </configuration>
                     </execution>
