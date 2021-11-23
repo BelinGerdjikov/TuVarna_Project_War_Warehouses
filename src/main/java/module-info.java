@@ -2,6 +2,7 @@ module bg.tu_varna.sit.group24.tu_varna_warehouses {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
+
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires validatorfx;
@@ -9,6 +10,9 @@ module bg.tu_varna.sit.group24.tu_varna_warehouses {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires log4j;
+    requires org.hibernate.orm.core;
+    requires java.persistence;
+
 
    //exports bg.tu_varna.sit.group24.tu_varna_warehouses;
 
