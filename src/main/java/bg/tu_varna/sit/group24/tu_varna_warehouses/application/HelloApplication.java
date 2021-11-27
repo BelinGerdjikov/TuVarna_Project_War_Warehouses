@@ -38,8 +38,8 @@ public class HelloApplication extends Application {
             stage.setMaxWidth(780);
             stage.setMaxHeight(630);
 
-            stage.setWidth(320);
-            stage.setHeight(240);
+            stage.setWidth(611);
+            stage.setHeight(508);
 
             stage.show();
         }else{

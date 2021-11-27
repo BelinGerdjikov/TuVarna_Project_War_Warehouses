@@ -28,22 +28,45 @@ public class LoginRepository implements DAORepository<Login> {
         Transaction transaction = session.beginTransaction();
         try{
             session.save(obj);
-            log.info("User saved successfully");
+            log.info("Login saved successfully");
         }catch (Exception ex){
-            log.error("Login save error"+ex.getMessage());
+            log.error("Login saved error"+ex.getMessage());
         }finally {
             transaction.commit();
+            session.close();
         }
     }
 
     @Override
     public void update(Login obj) {
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            session.update(obj);
+            log.info("Login updated successfully");
+        }catch (Exception ex){
+            log.error("Login updated error"+ex.getMessage());
+        }finally {
+            transaction.commit();
+            session.close();
+        }
+
 
     }
 
     @Override
     public void delete(Login obj) {
-
+        Session session = Connection.openSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            session.update(obj);
+            log.info("Login deleted successfully");
+        }catch (Exception ex){
+            log.error("Login deleted error"+ex.getMessage());
+        }finally {
+            transaction.commit();
+            session.close();
+        }
     }
 
     @Override
@@ -55,16 +78,20 @@ public class LoginRepository implements DAORepository<Login> {
     public List<Login> getAll() {
         Session session = Connection.openSession();
         Transaction transaction = session.beginTransaction();
-        List<Login> task= new LinkedList<>();
+        List<Login> logins= new LinkedList<>();
 
-        //need work
+        try{
+           //String jpql="SELECT * FROM login";!!!!!!!
+            //logins.addAll(session.createQuery(jpql,Login.class).getResultList());
+           // log.info("Get all logins");
 
-        return task;
+        }catch(Exception ex){
+           // logins.error("Get login error: "+ex.getMessage());
+        }finally{
+            transaction.commit();
+        }
+
+        return logins;
     }
-
-
-
-
-
 
 }
