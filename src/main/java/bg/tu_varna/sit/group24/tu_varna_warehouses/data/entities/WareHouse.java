@@ -7,20 +7,27 @@ import java.io.Serializable;
 public class WareHouse implements Serializable {
     private static final long serialVersionUID = 1l;
 
-    @Override
-    public String toString() {
-        return "WareHouse{" +
-                "warehouse_id=" + warehouse_id +
-                ", size=" + size +
-                ", climate='" + climate + '\'' +
-                ", cost=" + cost +
-                '}';
-    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="warehouse_id",nullable = false)
     private Long warehouse_id;
+
+    @Column(name="owner_id",nullable = false)
+    private Long owner_id;
+
+    @Column(name="is_empty",nullable = false)
+    private Boolean is_empty;
+
+    @Column(name="address",nullable = false)
+    private String address;
+
+    @Column(name="cost",nullable = false)
+    private Double cost;
+
+    @Column(name="type_warehouse",nullable = false)
+    private String type_warehouse;
 
     @Column(name="size",nullable = false)
     private Long size;
@@ -28,40 +35,8 @@ public class WareHouse implements Serializable {
     @Column(name="climate",nullable = false)
     private String climate;
 
-    @Column(name="cost",nullable = false)
-    private Double cost;
 
-    public Long getWarehouse_id() {
-        return warehouse_id;
-    }
 
-    public void setWarehouse_id(Long warehouse_id) {
-        this.warehouse_id = warehouse_id;
-    }
-
-    public Long getSize() {
-        return size;
-    }
-
-    public void setSize(Long size) {
-        this.size = size;
-    }
-
-    public String getClimate() {
-        return climate;
-    }
-
-    public void setClimate(String climate) {
-        this.climate = climate;
-    }
-
-    public Double getCost() {
-        return cost;
-    }
-
-    public void setCost(Double cost) {
-        this.cost = cost;
-    }
 
 
 }

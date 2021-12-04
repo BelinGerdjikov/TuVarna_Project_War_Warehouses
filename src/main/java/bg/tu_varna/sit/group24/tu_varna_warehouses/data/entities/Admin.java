@@ -2,6 +2,7 @@ package bg.tu_varna.sit.group24.tu_varna_warehouses.data.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Table(name="admin1")
 public class Admin implements Serializable {
@@ -13,44 +14,34 @@ public class Admin implements Serializable {
     @Column(name="admin_id",nullable = false)
     private Long admin_id;
 
+    @Column(name="admin_name",nullable = false)
+    private String admin_name;
 
-    @Column(name="login_id",nullable = false)
-    private Long login_id;
+   // @OneToOne
+   // @JoinColumn(name="login_id",nullable = false)
+   // private Login login;
 
-    @Column(name="pass",nullable = false)
-    private String pass;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "login_id", referencedColumnName = "login_id")
+    private Login login;
+
+   //@OneToMany
+   //@JoinColumn(name="agent_id",nullable = true)
+   //private Set<Agent> agentSet;
+
+   //@OneToMany
+   //@JoinColumn(name="owner_id",nullable = true)
+   //private Set<Owner> ownerSet;
 
 
-    public Long getAdmin_id() {
-        return admin_id;
-    }
+    @OneToMany(mappedBy="agent")
+    private Set<Agent> agentSet;
 
-    public void setAdmin_id(Long admin_id) {
-        this.admin_id = admin_id;
-    }
+    @OneToMany(mappedBy="owner")
+    private Set<Agent> ownerSet;
 
-    public Long getLogin_id() {
-        return login_id;
-    }
 
-    public void setLogin_id(Long login_id) {
-        this.login_id = login_id;
-    }
 
-    public String getPass() {
-        return pass;
-    }
 
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
 
-    @Override
-    public String toString() {
-        return "Admin{" +
-                "admin_id=" + admin_id +
-                ", login_id=" + login_id +
-                ", pass=" + pass +
-                '}';
-    }
 }

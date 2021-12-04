@@ -26,10 +26,14 @@ public class HelloController implements EventHandler<MouseEvent>{
     private Label test;
 
     @FXML
+    private Button add;
+
+    @FXML
     private void initialize(){
         loginAdmin.setOnMouseClicked(this::handle);
         loginAgent.setOnMouseClicked(this::loginAgent);
         loginOwner.setOnMouseClicked(this::loginOwner);
+
     }
 
     @Override
@@ -59,6 +63,9 @@ public class HelloController implements EventHandler<MouseEvent>{
         newWindows.create(mouseEvent,path,"Owner");
         stage.hide();
     }
+
+
+
 
 
 

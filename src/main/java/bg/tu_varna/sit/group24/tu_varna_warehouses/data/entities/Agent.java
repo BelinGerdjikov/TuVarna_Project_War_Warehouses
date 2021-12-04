@@ -12,29 +12,27 @@ public class Agent implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="agent_id",nullable = false)
-    private Long agent_id;
+    @ManyToOne
+    @JoinColumn(name="agent_id", nullable=false)
+    private Agent agent;
 
     @Column(name="agent_name",nullable = false)
     private String agent_name;
 
-    @Column(name="agent_phone",nullable = false)
-    private String agent_phone;
 
-    @Column(name="contract_id",nullable = false)
-    private Long contract_id;
+    @ManyToOne
+    @JoinColumn(name="contract_id", nullable=false)
+    private Contract contract;
 
-    @Column(name="pass",nullable = false)
-    private String pass;
+    @Column(name="rating",nullable = true)
+    private Double rating;
 
-    @Override
-    public String toString() {
-        return "Agent{" +
-                "agent_id=" + agent_id +
-                ", agent_name='" + agent_name + '\'' +
-                ", agent_phone='" + agent_phone + '\'' +
-                ", contract_id=" + contract_id +
-                ", pass='" + pass + '\'' +
-                '}';
-    }
+    @Column(name="commission_proc",nullable = false)
+    private Double commission;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "login_id", referencedColumnName = "login_id")
+    private Login login;
+
+
 }

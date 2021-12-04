@@ -13,7 +13,13 @@ public class Constants {
     }
 
 
+    public static class MenuWindow{
+        public static final String MenuWindowAdmin="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/AdminMenu.fxml";
 
+        public static final String MenuWindowAgent="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/AgentMenu.fxml";
+
+        public static final String MenuWindowOwner="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/OwnerMenu.fxml";
+    }
 
     public static class Configurations{
         public static final String LOG4j_PROPERTIES="/bg/tu_varna/sit/group24/tu_varna_warehouses/configuration/log4j.properties";
