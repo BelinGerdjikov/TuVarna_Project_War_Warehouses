@@ -25,7 +25,7 @@ public class OwnerMenuController implements EventHandler<MouseEvent> {
         Stage stage = (Stage)backButton.getScene().getWindow();
         CreatingNewWindows newWindows = new CreatingNewWindows();
         URL path= getClass().getResource(Constants.View.HELLO_VIEW);
-        newWindows.create(mouseEvent,path,"Login Menu");
+        newWindows.create(path,"Login Menu");
         stage.hide();
     }
 }

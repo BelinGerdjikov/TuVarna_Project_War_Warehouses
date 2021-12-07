@@ -43,7 +43,7 @@ public class HelloController implements EventHandler<MouseEvent>{
 
         CreatingNewWindows newWindows = new CreatingNewWindows();
         URL path= getClass().getResource(Constants.LoginWindow.LoginWindowAdmin);
-        newWindows.create(mouseEvent,path,"Admin");
+        newWindows.create(path,"Admin");
         stage.hide();
 
     }
@@ -52,7 +52,7 @@ public class HelloController implements EventHandler<MouseEvent>{
         Stage stage = (Stage)loginAdmin.getScene().getWindow();
         CreatingNewWindows newWindows = new CreatingNewWindows();
         URL path= getClass().getResource(Constants.LoginWindow.LoginWindowAgent);
-        newWindows.create(mouseEvent,path,"Agent");
+        newWindows.create(path,"Agent");
         stage.hide();
     }
 
@@ -60,7 +60,7 @@ public class HelloController implements EventHandler<MouseEvent>{
         Stage stage = (Stage)loginAdmin.getScene().getWindow();
         CreatingNewWindows newWindows = new CreatingNewWindows();
         URL path= getClass().getResource(Constants.LoginWindow.LoginWindowOwner);
-        newWindows.create(mouseEvent,path,"Owner");
+        newWindows.create(path,"Owner");
         stage.hide();
     }
 

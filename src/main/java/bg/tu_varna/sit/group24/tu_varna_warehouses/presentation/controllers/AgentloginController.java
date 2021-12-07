@@ -43,7 +43,7 @@ public class AgentloginController implements EventHandler<MouseEvent> {
         Stage stage = (Stage)loginButton.getScene().getWindow();
         CreatingNewWindows newWindows = new CreatingNewWindows();
         URL path= getClass().getResource(Constants.MenuWindow.MenuWindowAgent);
-        newWindows.create(mouseEvent,path,"Menu");
+        newWindows.create(path,"Menu");
         stage.hide();
     }
 
@@ -53,7 +53,7 @@ public class AgentloginController implements EventHandler<MouseEvent> {
         Stage stage = (Stage)backbutton.getScene().getWindow();
         CreatingNewWindows newWindows = new CreatingNewWindows();
         URL path= getClass().getResource(Constants.View.HELLO_VIEW);
-        newWindows.create(mouseEvent,path,"StartWindow");
+        newWindows.create(path,"StartWindow");
         stage.hide();
     }
 }

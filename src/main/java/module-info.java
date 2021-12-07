@@ -13,6 +13,7 @@ module bg.tu_varna.sit.group24.tu_varna_warehouses {
     requires org.hibernate.orm.core;
     requires java.persistence;
     requires java.naming;
+    requires java.sql;
 
 
    //exports bg.tu_varna.sit.group24.tu_varna_warehouses;
