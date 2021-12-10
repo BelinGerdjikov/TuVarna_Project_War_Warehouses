@@ -14,6 +14,8 @@ module bg.tu_varna.sit.group24.tu_varna_warehouses {
     requires java.persistence;
     requires java.naming;
     requires java.sql;
+    requires mysql.connector.java;
+
 
 
    //exports bg.tu_varna.sit.group24.tu_varna_warehouses;

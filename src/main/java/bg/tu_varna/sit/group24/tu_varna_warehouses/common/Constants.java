@@ -21,6 +21,12 @@ public class Constants {
         public static final String MenuWindowOwner="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/OwnerMenu.fxml";
     }
 
+    public static class MenuCreate {
+        public static final String MenuCreateOwner="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/CreateOwner.fxml";
+        public static final String MenuCreateAgent="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/CreateAgent.fxml";
+
+    }
+
     public static class Configurations{
         public static final String LOG4j_PROPERTIES="/bg/tu_varna/sit/group24/tu_varna_warehouses/configuration/log4j.properties";
     }

@@ -15,8 +15,35 @@ public class AdminMenuController implements EventHandler<MouseEvent> {
     private Button backButton;
 
     @FXML
+    private Button create_agent_button;
+
+    @FXML
+    private Button create_owner_button;
+
+    @FXML
     private void initialize(){
         backButton.setOnMouseClicked(this::handle);
+        create_agent_button.setOnMouseClicked(this::create_agent);
+        create_owner_button.setOnMouseClicked(this::create_owner);
+    }
+
+
+    public void create_agent(MouseEvent mouseEvent) {
+        Stage stage = (Stage)backButton.getScene().getWindow();
+        CreatingNewWindows newWindows = new CreatingNewWindows();
+        URL path= getClass().getResource(Constants.MenuCreate.MenuCreateAgent);
+        newWindows.create(path,"Create Menu");
+        stage.hide();
+
+    }
+
+    public void create_owner(MouseEvent mouseEvent) {
+        Stage stage = (Stage)backButton.getScene().getWindow();
+        CreatingNewWindows newWindows = new CreatingNewWindows();
+        URL path= getClass().getResource(Constants.MenuCreate.MenuCreateOwner);
+        newWindows.create(path,"Create Menu");
+        stage.hide();
+
     }
 
     @Override
@@ -28,4 +55,7 @@ public class AdminMenuController implements EventHandler<MouseEvent> {
         newWindows.create(path,"Login Menu");
         stage.hide();
     }
+
+
+
 }

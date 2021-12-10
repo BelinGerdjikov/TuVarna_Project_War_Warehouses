@@ -1,73 +1,46 @@
 package bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories;
 
-import bg.tu_varna.sit.group24.tu_varna_warehouses.data.access.Connection;
-import bg.tu_varna.sit.group24.tu_varna_warehouses.data.entities.Admin;
-import org.apache.log4j.Logger;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.data.access.DataBaseConnection;
 
-import java.util.List;
-import java.util.Optional;
-
-public class AdminRepository implements DAORepository<Admin>{
-
-    private static final Logger log = Logger.getLogger(AdminRepository.class);
-
-    public static AdminRepository getInstance() {
-        return AdminRepository.AdminRepositoryHolder.INSTANCE;
-    }
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
-    private static class AdminRepositoryHolder {
-        public static final AdminRepository INSTANCE = new AdminRepository();
-    }
+public class AdminRepository {
 
-    @Override
-    public void save(Admin obj) {
-        Session session = Connection.openSession();
-        Transaction transaction = session.beginTransaction();
-        try{
-            session.save(obj);
-            log.info("Admin saved successfully");
-        }catch (Exception ex){
-            log.error("Admin saved error"+ex.getMessage());
-        }finally {
-            transaction.commit();
-            session.close();
-        }
-    }
-
-
-
-    @Override
-    public void update(Admin obj) {
-        Session session = Connection.openSession();
-        Transaction transaction = session.beginTransaction();
-        try{
-            session.update(obj);
-            log.info("Admin updated successfully");
-        }catch (Exception ex){
-            log.error("Admin updated error"+ex.getMessage());
-        }finally {
-            transaction.commit();
-            session.close();
-        }
-    }
-
-    @Override
-    public void delete(Admin obj) {
+    static Connection conn;
+    static PreparedStatement create;
+    static String sql;
+    public static void CreateAdmin(){
 
     }
 
-    @Override
-    public Optional<Admin> getByID(Long id) {
-        return Optional.empty();
+
+
+    public static int loginINAdmin(int loginId){
+
+       try{
+
+           conn= DataBaseConnection.getConnection();
+
+           String sql = "SELECT * FROM admin1 where login_id="+loginId;
+           PreparedStatement ps = conn.prepareStatement(sql);
+           ResultSet rs = ps.executeQuery(sql);
+
+           while(rs.next()){
+
+               return rs.getInt("admin_id");
+           }
+
+       } catch(SQLException e) {
+           e.printStackTrace();
+       }
+
+        return -1;
     }
 
-    @Override
-    public List<Admin> getAll() {
-        return null;
-    }
 
 
 }

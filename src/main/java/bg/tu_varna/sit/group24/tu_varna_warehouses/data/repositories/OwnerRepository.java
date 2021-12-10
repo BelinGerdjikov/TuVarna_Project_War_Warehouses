@@ -1,33 +1,54 @@
 package bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories;
 
-import bg.tu_varna.sit.group24.tu_varna_warehouses.data.entities.Owner;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.data.access.DataBaseConnection;
 
-import java.util.List;
-import java.util.Optional;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class OwnerRepository implements DAORepository<Owner>{
-    @Override
-    public void save(Owner obj) {
+public class OwnerRepository {
+
+    static Connection conn;
+    static PreparedStatement create;
+
+
+    public static void CreateOwner(String owner_name1,int login_id1){
+
+            try{
+                conn= DataBaseConnection.getConnection();
+
+                String sql = "INSERT INTO owner1 (login_id,owner_name) VALUES ("+login_id1+",'"+owner_name1+"')";
+
+
+                create = conn.prepareStatement(sql);
+                create.executeUpdate(sql);
+
+            } catch(SQLException e) {
+                e.printStackTrace();
+            }
 
     }
 
-    @Override
-    public void update(Owner obj) {
+    public static int loginINOwner(int loginId){
 
-    }
+        try{
 
-    @Override
-    public void delete(Owner obj) {
+            conn= DataBaseConnection.getConnection();
 
-    }
+            String sql = "SELECT * FROM owner1 where login_id="+loginId;
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery(sql);
 
-    @Override
-    public Optional<Owner> getByID(Long id) {
-        return Optional.empty();
-    }
+            while(rs.next()){
 
-    @Override
-    public List<Owner> getAll() {
-        return null;
+                return rs.getInt("owner_id");
+            }
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+
+        return -1;
     }
 }

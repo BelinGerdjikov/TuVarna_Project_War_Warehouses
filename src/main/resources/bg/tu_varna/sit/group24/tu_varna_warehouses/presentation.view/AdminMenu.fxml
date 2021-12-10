@@ -7,10 +7,9 @@
 
 <AnchorPane prefHeight="656.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.AdminMenuController">
    <children>
-      <Button layoutX="350.0" layoutY="150.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Admin Account" />
-      <Button layoutX="350.0" layoutY="230.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Owner Account" />
-      <Button layoutX="350.0" layoutY="304.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Agent Account" />
-      <Label layoutX="377.0" layoutY="33.0" text="Admin Menu">
+      <Button fx:id="create_owner_button" layoutX="350.0" layoutY="230.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Owner Account" />
+      <Button fx:id="create_agent_button" layoutX="350.0" layoutY="304.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Agent Account" />
+      <Label layoutX="377.0" layoutY="36.0" text="Admin Menu">
          <font>
             <Font size="18.0" />
          </font>

@@ -2,6 +2,8 @@ package bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers;
 
 import bg.tu_varna.sit.group24.tu_varna_warehouses.application.CreatingNewWindows;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.LoginRepository;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.OwnerRepository;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -42,11 +44,18 @@ public class OwnerloginController implements EventHandler<MouseEvent>
     @Override
     public void handle(MouseEvent mouseEvent) {
 
-        Stage stage = (Stage)loginButton.getScene().getWindow();
-        CreatingNewWindows newWindows = new CreatingNewWindows();
-        URL path= getClass().getResource(Constants.MenuWindow.MenuWindowOwner);
-        newWindows.create(path,"Menu");
-        stage.hide();
+        if(OwnerRepository.loginINOwner(LoginRepository.login_cheak(Ownerusername.getText(),Ownerpassword.getText()))>0){
+            Stage stage = (Stage)loginButton.getScene().getWindow();
+            CreatingNewWindows newWindows = new CreatingNewWindows();
+            URL path= getClass().getResource(Constants.MenuWindow.MenuWindowOwner);
+            newWindows.create(path,"Menu");
+            stage.hide();
+
+        }else{
+            errorMessage.setText("Wrong");
+        }
+
+
     }
 
 

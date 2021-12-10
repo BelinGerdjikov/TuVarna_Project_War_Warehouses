@@ -1,12 +1,9 @@
 package bg.tu_varna.sit.group24.tu_varna_warehouses.data.access;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DataBaseConnection {
-    static String databaseName="ware_houseProject";
     static String URL="jdbc:mysql://localhost:3305/ware_house_project";
     static String name="root";
     static String password="belin123";
@@ -15,11 +12,14 @@ public class DataBaseConnection {
     static PreparedStatement create;
     static String sql;
 
+
+
+
     public static void main(String[] args) {
         try {
             conn = getConnection();
-            DB();
 
+            login_duplicate_cheak();
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -27,13 +27,57 @@ public class DataBaseConnection {
 
     }
 
-    public static void DB() throws SQLException {
+    public static void login_duplicate_cheak() throws SQLException{
 
-        sql = "create database if not exists " + databaseName;
-        create = conn.prepareStatement(sql);
-        create.executeUpdate(sql);
-        System.out.println("Database created successfully...");
+        try {
+            String sql = "SELECT * FROM login";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery(sql);
+
+            String name="Belin";
+            String take="";
+            while(rs.next()){
+                take=rs.getString("username");
+                System.out.println(take);
+                System.out.println(take.length());
+                System.out.println(name);
+                System.out.println(name.length());
+                System.out.println(name.compareTo(take));
+
+                if(name.compareTo(take)==0){
+
+                }
+
+                // if(name==take){
+                //     //System.out.println("take");
+                //     System.out.println("Belin is already in the system");
+                // }
+            }
+
+
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+
+        }
+
     }
+
+
+
+
+    // try {
+    //    String SQL = "Select * FROM '100';";
+    //    ResultSet rs = connection.createStatement().executeQuery(SQL);
+
+    //    while (rs.next()) {
+    //        String yellow = rs.getString("BasePt");
+    //        TextField textField = new TextField(yellow);
+    //        vBox.getChildren().add(textField);
+    //    }
+    //} catch (Exception e) {
+    //    e.printStackTrace();
+    //}
 
     public static Connection getConnection() throws SQLException {
         try {
@@ -44,6 +88,25 @@ public class DataBaseConnection {
             System.out.println(e);
         }
         return null;
+    }
+
+
+
+    public static void addLogin() throws SQLException{
+
+        try {
+            Connection conn =
+                    DriverManager.getConnection(URL, name, password);
+
+            sql = "insert into login(login_id,username,password1) values(1,'Belin','111111')";
+
+            create = conn.prepareStatement(sql);
+            create.executeUpdate(sql);
+
+        } catch(SQLException e) {
+            System.out.println(e);
+        }
+
     }
 
 
