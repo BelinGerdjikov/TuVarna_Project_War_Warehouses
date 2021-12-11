@@ -21,10 +21,20 @@ public class AdminMenuController implements EventHandler<MouseEvent> {
     private Button create_owner_button;
 
     @FXML
+    private Button Reference;
+
+
+    @FXML
     private void initialize(){
         backButton.setOnMouseClicked(this::handle);
         create_agent_button.setOnMouseClicked(this::create_agent);
         create_owner_button.setOnMouseClicked(this::create_owner);
+        Reference.setOnMouseClicked(this::Reference);
+    }
+
+
+    public void Reference(MouseEvent mouseEvent){
+
     }
 
 

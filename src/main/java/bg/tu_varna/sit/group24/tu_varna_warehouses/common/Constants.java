@@ -24,7 +24,7 @@ public class Constants {
     public static class MenuCreate {
         public static final String MenuCreateOwner="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/CreateOwner.fxml";
         public static final String MenuCreateAgent="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/CreateAgent.fxml";
-
+        public static final String MenuCreateWarehouse="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/CreateWarehouse.fxml";
     }
 
     public static class Configurations{
@@ -33,5 +33,9 @@ public class Constants {
 
     public static class Values{
         public static final String Title ="Example App";
+    }
+
+    public static class ID_save{
+        public static int owner=0;
     }
 }

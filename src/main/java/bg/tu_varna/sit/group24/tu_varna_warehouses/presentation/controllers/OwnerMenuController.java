@@ -15,8 +15,21 @@ public class OwnerMenuController implements EventHandler<MouseEvent> {
     private Button backButton;
 
     @FXML
+    private Button create_warehouse;
+
+    @FXML
     private void initialize(){
         backButton.setOnMouseClicked(this::handle);
+        create_warehouse.setOnMouseClicked(this::Create_owner);
+    }
+
+    public void Create_owner(MouseEvent mouseEvent){
+        System.out.println("Good");
+        Stage stage = (Stage)backButton.getScene().getWindow();
+        CreatingNewWindows newWindows = new CreatingNewWindows();
+        URL path= getClass().getResource(Constants.MenuCreate.MenuCreateWarehouse);
+        newWindows.create(path,"Create Warehouse");
+        stage.hide();
     }
 
     @Override
