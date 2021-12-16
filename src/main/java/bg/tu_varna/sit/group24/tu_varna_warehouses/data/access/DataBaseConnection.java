@@ -4,9 +4,10 @@ import java.sql.Connection;
 import java.sql.*;
 
 public class DataBaseConnection {
-    static String URL="jdbc:mysql://localhost:3305/ware_house_project";
+    static String URL="jdbc:mysql://localhost:3306/ware_house_project";
+    //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=rootpassword");
     static String name="root";
-    static String password="belin123";
+    static String password="Ru087238849";
 
     static Connection conn;
     static PreparedStatement create;
