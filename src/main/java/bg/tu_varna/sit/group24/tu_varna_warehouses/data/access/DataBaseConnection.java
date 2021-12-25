@@ -38,11 +38,7 @@ public class DataBaseConnection {
             String take="";
             while(rs.next()){
                 take=rs.getString("username");
-                System.out.println(take);
-                System.out.println(take.length());
-                System.out.println(name);
-                System.out.println(name.length());
-                System.out.println(name.compareTo(take));
+
 
                 if(name.compareTo(take)==0){
 

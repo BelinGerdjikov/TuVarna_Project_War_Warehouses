@@ -6,11 +6,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="459.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.CreateOwnerController">
+<AnchorPane prefHeight="459.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin.CreateOwnerController">
    <children>
       <Button fx:id="back" layoutX="432.0" layoutY="364.0" mnemonicParsing="false" text="Back" />
       <Button fx:id="create" layoutX="145.0" layoutY="370.0" mnemonicParsing="false" text="Create" />
-      <Label layoutX="80.0" layoutY="101.0" text="Agent name" />
+      <Label layoutX="80.0" layoutY="101.0" text="Owner name" />
       <Label layoutX="80.0" layoutY="150.0" prefHeight="17.0" prefWidth="71.0" text="Login name" />
       <Label layoutX="80.0" layoutY="209.0" text="Password" />
       <TextField fx:id="Owner_Name" layoutX="226.0" layoutY="97.0" />
