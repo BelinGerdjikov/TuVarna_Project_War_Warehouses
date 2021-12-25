@@ -21,6 +21,13 @@ public class HelloController implements EventHandler<MouseEvent>{
     @FXML
     private Button loginOwner;
 
+<<<<<<< HEAD
+=======
+    @FXML
+    private Label test;
+
+
+>>>>>>> cf40bc2 (final beta)
 
     @FXML
     private void initialize(){
@@ -57,6 +64,9 @@ public class HelloController implements EventHandler<MouseEvent>{
         newWindows.create(path,"Owner");
         stage.hide();
     }
+
+
+
 
 
 

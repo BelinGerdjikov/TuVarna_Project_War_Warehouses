@@ -1,6 +1,7 @@
 package bg.tu_varna.sit.group24.tu_varna_warehouses.application;
 
 import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.WareHouseRepository;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,8 +21,14 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+
+
         PropertyConfigurator.configure(HelloApplication.class.getResource(Constants.Configurations.LOG4j_PROPERTIES));
+<<<<<<< HEAD
         URL path= getClass().getResource("/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/hello-view.fxml");
+=======
+        URL path= getClass().getResource(Constants.MenuWindow.MenuWindowAdmin);
+>>>>>>> cf40bc2 (final beta)
 
         if(path != null){
             Parent root = FXMLLoader.load(path);
@@ -37,11 +44,19 @@ public class HelloApplication extends Application {
 
             stage.setResizable(false);
 
+<<<<<<< HEAD
             /*stage.setMaxWidth(600);
             stage.setMaxHeight(500);
 
             stage.setWidth(600);
             stage.setHeight(435);*/
+=======
+            //stage.setMaxWidth(780);
+            //stage.setMaxHeight(630);
+
+            //stage.setWidth(611);
+            //stage.setHeight(508);
+>>>>>>> cf40bc2 (final beta)
 
             stage.show();
         }else{
@@ -51,6 +66,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        WareHouseRepository.refresh();
         launch();
     }
 }

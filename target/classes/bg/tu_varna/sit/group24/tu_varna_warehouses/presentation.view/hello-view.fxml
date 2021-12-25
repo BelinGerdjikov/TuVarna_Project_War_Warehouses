@@ -20,6 +20,7 @@
             <Font name="System Bold Italic" size="31.0" />
          </font>
       </Label>
+<<<<<<< HEAD
       <ImageView fitHeight="97.0" fitWidth="67.0" layoutX="261.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Photos/home.png" />
@@ -29,5 +30,8 @@
       <Button fx:id="loginAdmin" layoutX="243.0" layoutY="193.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="103.0" text="Admin" />
       <Button fx:id="loginOwner" layoutX="243.0" layoutY="336.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="103.0" text="Owner" />
       <Button fx:id="loginAgent" layoutX="243.0" layoutY="265.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="103.0" text="Agent" />
+=======
+      <Label fx:id="test" layoutX="267.0" layoutY="38.0" text="Label" />
+>>>>>>> cf40bc2 (final beta)
    </children>
 </AnchorPane>

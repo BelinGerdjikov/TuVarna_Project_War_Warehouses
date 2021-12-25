@@ -9,7 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane prefHeight="275.0" prefWidth="608.0" style="-fx-background-color: #ad8174;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.AdminloginController">
+=======
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin.AdminloginController">
+>>>>>>> cf40bc2 (final beta)
    <children>
       <AnchorPane layoutY="78.0" prefHeight="295.0" prefWidth="215.0" style="-fx-background-color: #907163;">
          <children>

@@ -13,6 +13,8 @@ public class OwnerRepository {
     static PreparedStatement create;
 
 
+
+
     public static void CreateOwner(String owner_name1,int login_id1){
 
             try{
