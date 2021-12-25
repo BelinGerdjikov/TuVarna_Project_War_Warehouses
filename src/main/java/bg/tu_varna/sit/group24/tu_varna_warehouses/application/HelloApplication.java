@@ -24,11 +24,7 @@ public class HelloApplication extends Application {
 
 
         PropertyConfigurator.configure(HelloApplication.class.getResource(Constants.Configurations.LOG4j_PROPERTIES));
-<<<<<<< HEAD
-        URL path= getClass().getResource("/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/hello-view.fxml");
-=======
         URL path= getClass().getResource(Constants.MenuWindow.MenuWindowAdmin);
->>>>>>> cf40bc2 (final beta)
 
         if(path != null){
             Parent root = FXMLLoader.load(path);
@@ -38,25 +34,15 @@ public class HelloApplication extends Application {
             scene.setFill(Color.TRANSPARENT);
 
             stage.setTitle(Constants.Values.Title);
-            String css = this.getClass().getResource("/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/ApplicationStyle.css").toExternalForm();
-            scene.getStylesheets().add(css);
             stage.setScene(scene);
 
             stage.setResizable(false);
 
-<<<<<<< HEAD
-            /*stage.setMaxWidth(600);
-            stage.setMaxHeight(500);
-
-            stage.setWidth(600);
-            stage.setHeight(435);*/
-=======
             //stage.setMaxWidth(780);
             //stage.setMaxHeight(630);
 
             //stage.setWidth(611);
             //stage.setHeight(508);
->>>>>>> cf40bc2 (final beta)
 
             stage.show();
         }else{
