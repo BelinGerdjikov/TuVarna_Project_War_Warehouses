@@ -1,0 +1,40 @@
+#Adminusername{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #C9917BFF;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #ab8d8d;
+    -fx-background-color: transparent;
+}
+#Adminpassword{
+    -fx-border-color: #F64C72;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-background-color: transparent;
+    -fx-prompt-text-fill: #ab8d8d;
+    -fx-text-fill:  #C9917BFF;
+}
+#loginButton{
+    -fx-background-color:#C9917BFF;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+#loginAdmin{
+    -fx-background-color: #655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#loginAgent{
+    -fx-background-color: #655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#loginOwner{
+    -fx-background-color: #655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
