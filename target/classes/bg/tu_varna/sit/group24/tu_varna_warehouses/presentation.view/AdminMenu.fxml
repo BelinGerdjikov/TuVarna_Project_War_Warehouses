@@ -5,19 +5,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="683.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin.AdminMenuController">
+<AnchorPane prefHeight="656.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.AdminMenuController">
    <children>
       <Button fx:id="create_owner_button" layoutX="350.0" layoutY="170.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Owner Account" />
-      <Button fx:id="create_agent_button" layoutX="350.0" layoutY="254.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Agent Account" />
+      <Button fx:id="create_agent_button" layoutX="350.0" layoutY="249.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Agent Account" />
       <Label layoutX="377.0" layoutY="36.0" text="Admin Menu">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="Create_warehouse" layoutX="350.0" layoutY="328.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Warehouse" />
-      <Button fx:id="Update_warehouse" layoutX="350.0" layoutY="404.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Updating Warehouse" />
+      <Button layoutX="350.0" layoutY="328.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Create Warehouse" />
+      <Button layoutX="350.0" layoutY="404.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Updating Warehouse" />
       <Button fx:id="backButton" layoutX="715.0" layoutY="575.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="79.0" text="Back" />
       <Button fx:id="Reference" layoutX="350.0" layoutY="483.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Reference" />
-      <Button fx:id="Agents_ratings" layoutX="350.0" layoutY="560.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="158.0" text="Agent ratings" />
    </children>
 </AnchorPane>

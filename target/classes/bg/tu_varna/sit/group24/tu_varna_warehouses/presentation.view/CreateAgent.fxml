@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="502.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin.CreateAgentController">
+<AnchorPane prefHeight="502.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.CreateAgentController">
    <children>
       <Label layoutX="285.0" layoutY="50.0" text="Create Agent">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="166.0" layoutY="133.0" text="Agent Name" />
+      <Label layoutX="166.0" layoutY="133.0" text="Name" />
       <Label layoutX="166.0" layoutY="181.0" text="Username" />
       <Label layoutX="166.0" layoutY="234.0" text="password" />
       <Label layoutX="166.0" layoutY="279.0" text="password" />

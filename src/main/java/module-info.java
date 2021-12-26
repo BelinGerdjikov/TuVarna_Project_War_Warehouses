@@ -31,8 +31,7 @@ module bg.tu_varna.sit.group24.tu_varna_warehouses {
 
 
 
-    exports bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.models;
-    opens  bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.models to javafx.fxml;
+
 
     exports bg.tu_varna.sit.group24.tu_varna_warehouses.application;
     opens  bg.tu_varna.sit.group24.tu_varna_warehouses.application to javafx.fxml;
@@ -40,10 +39,4 @@ module bg.tu_varna.sit.group24.tu_varna_warehouses {
 
     exports bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers;
     opens  bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers to javafx.fxml;
-    exports bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin;
-    opens bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin to javafx.fxml;
-    exports bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Agent;
-    opens bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Agent to javafx.fxml;
-    exports bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Owner;
-    opens bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Owner to javafx.fxml;
 }
