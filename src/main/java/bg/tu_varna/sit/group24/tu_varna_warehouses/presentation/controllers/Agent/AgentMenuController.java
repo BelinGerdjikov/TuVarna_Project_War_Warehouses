@@ -2,9 +2,12 @@ package bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Age
 
 import bg.tu_varna.sit.group24.tu_varna_warehouses.application.CreatingNewWindows;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.AgentRepository;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -20,7 +23,19 @@ public class AgentMenuController implements EventHandler<MouseEvent> {
     private Button client_info;
 
     @FXML
+    private Label comm_now;
+
+    @FXML
+    private TextField commission_field;
+
+    @FXML
     private Button market;
+
+    @FXML
+    private Button update_commission;
+
+    @FXML
+    private Label errorMessage;
 
 
     @FXML
@@ -28,6 +43,32 @@ public class AgentMenuController implements EventHandler<MouseEvent> {
         backButton.setOnMouseClicked(this::handle);
         market.setOnMouseClicked(this::market);
         client_info.setOnMouseClicked(this::client_info);
+        update_commission.setOnMouseClicked(this::update);
+        errorMessage.setText("");
+        int temp=(AgentRepository.get_commission(Constants.ID_save.agent));
+        comm_now.setText(String.valueOf(temp)+"%");
+
+    }
+
+    public void update(MouseEvent mouseEvent) {
+        try {
+
+
+        int comm=Integer.parseInt(commission_field.getText());
+        if(comm>-1&&comm<21){
+
+
+        AgentRepository.update_commission(comm);
+
+        int temp=(AgentRepository.get_commission(Constants.ID_save.agent));
+        comm_now.setText(String.valueOf(temp)+"%");
+            errorMessage.setText("");
+        }else{
+            errorMessage.setText("The commission can be between 0 and 20%");
+        }
+        }catch(Exception ex){
+            errorMessage.setText("Invalid input");
+        }
     }
 
     public void market(MouseEvent mouseEvent) {

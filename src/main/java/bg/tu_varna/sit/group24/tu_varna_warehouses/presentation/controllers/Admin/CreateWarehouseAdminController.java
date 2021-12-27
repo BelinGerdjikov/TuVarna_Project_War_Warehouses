@@ -2,6 +2,7 @@ package bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Adm
 
 import bg.tu_varna.sit.group24.tu_varna_warehouses.application.CreatingNewWindows;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.OwnerRepository;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.WareHouseRepository;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -37,6 +38,9 @@ public class CreateWarehouseAdminController implements EventHandler<MouseEvent> 
     private TextField size;
 
     @FXML
+    private TextField owner_id;
+
+    @FXML
     private void initialize(){
 
         climate.getItems().add("Cold");
@@ -67,36 +71,37 @@ public class CreateWarehouseAdminController implements EventHandler<MouseEvent> 
 
         boolean valid = true;
 
-
-
-
-
         try {
-            if (address.getText().length() == 0) {
-                errorMessage.setText("Your address field is empty");
+            Integer owner=Integer.parseInt(owner_id.getText());
+            String address1=address.getText();
+            Double cost=Double.parseDouble(cost_per_day.getText());
+            Integer size1=Integer.parseInt(size.getText());
 
-            } else if (Double.parseDouble(cost_per_day.getText()) > 2) {
-                errorMessage.setText("The cost of the rent of the warehouse must be more then 2 dollar per day");
 
-            } else if (Integer.parseInt(size.getText()) > 3) {
-                errorMessage.setText("The size of the warehouse must be more then 3 square meters");
+
+            if(OwnerRepository.Owner_id_check(owner)==-1){
+                errorMessage.setText("Wrong ID");
+                valid=false;
             }
+            else if (address1.isEmpty()) {
+                errorMessage.setText("Your address field is empty");
+                valid=false;
 
-
-
-
-            WareHouseRepository.CreateWareHouse(address.getText(), Double.parseDouble(cost_per_day.getText()), Integer.parseInt(size.getText()), climate.getValue(), Constants.ID_save.owner);
+            } else if (cost < 2) {
+                errorMessage.setText("The cost of the rent of the warehouse must be more then 2 dollar per day");
+                valid=false;
+            } else if (size1 < 3) {
+                errorMessage.setText("The size of the warehouse must be more then 3 square meters");
+                valid=false;
+            }
 
 
             if (valid) {
-                Stage stage = (Stage) backButton.getScene().getWindow();
-                CreatingNewWindows newWindows = new CreatingNewWindows();
-                URL path = getClass().getResource(Constants.MenuWindow.MenuWindowAdmin);
-                newWindows.create(path, "Admin Menu");
-                stage.hide();
+                WareHouseRepository.CreateWareHouse(address1, cost,size1, climate.getValue(), owner);
+                errorMessage.setText("The new warehouse is added");
             }
         } catch (Exception exception) {
-            System.out.println("Neshto se bygna "+exception.getMessage());
+            errorMessage.setText("Invalid input");
 
         }
     }

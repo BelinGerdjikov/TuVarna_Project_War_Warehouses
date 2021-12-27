@@ -32,6 +32,28 @@ public class OwnerRepository {
 
     }
 
+    public static int Owner_id_check(int owner_id){
+
+        try{
+
+            conn= DataBaseConnection.getConnection();
+
+            String sql = "SELECT * FROM owner1 where owner_id="+owner_id;
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery(sql);
+
+            while(rs.next()){
+
+                return rs.getInt("owner_id");
+            }
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+
+        return -1;
+    }
+
     public static int loginINOwner(int loginId){
 
         try{

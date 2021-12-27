@@ -25,5 +25,6 @@
       <Label layoutX="70.0" layoutY="475.0" text="Rating" />
       <TextField fx:id="agent_id_update" layoutX="150.0" layoutY="398.0" />
       <TextField fx:id="rating_update" layoutX="150.0" layoutY="471.0" />
+      <Label fx:id="ErrorMessage" layoutX="338.0" layoutY="360.0" />
    </children>
 </AnchorPane>

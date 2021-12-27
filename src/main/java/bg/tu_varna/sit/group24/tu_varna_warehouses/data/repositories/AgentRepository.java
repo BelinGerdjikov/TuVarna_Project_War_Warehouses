@@ -1,5 +1,6 @@
 package bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories;
 
+import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.access.DataBaseConnection;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.models.ProfitAgent;
 
@@ -13,7 +14,17 @@ public class AgentRepository {
     static Connection conn;
     static PreparedStatement create;
 
+    public static void main(String[] args) {
+        try {
 
+
+
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
 
@@ -21,7 +32,7 @@ public class AgentRepository {
         try{
             conn= DataBaseConnection.getConnection();
 
-            String sql = "INSERT INTO agent (login_id,agent_name) VALUES ("+login_id1+",'"+agent_name1+"')";
+            String sql = "INSERT INTO agent (login_id,agent_name,rating,commission_proc) VALUES ("+login_id1+",'"+agent_name1+"',0,3)";
 
 
             create = conn.prepareStatement(sql);
@@ -82,8 +93,6 @@ public class AgentRepository {
         ProfitAgent prof=new ProfitAgent(0,0.0,-1,-1);
         try{
 
-
-
             conn= DataBaseConnection.getConnection();
 
             String sql = "SELECT * FROM contract where agent_id="+agent_ID;
@@ -102,19 +111,14 @@ public class AgentRepository {
                 x=y*100/(100+commission);
                 profit=profit+(y-x);
 
-                System.out.println("y= "+y+"\ndeals= "+deals+"\nx= "+x+"\nprofit= "+profit+"\n\n");
-
             }
-
-            if(deals>0) {
-                System.out.println("IN");
 
                 prof.setProfit(profit);
                 prof.setAgent_id(agent_ID);
                 prof.setDeals(deals);
                 prof.setCommission(commission);
                 return prof;
-            }
+
 
 
 
@@ -123,6 +127,40 @@ public class AgentRepository {
         }
 
        return null;
+    }
+
+
+    public static void update_rating(int agent_id,double rating){
+        try {
+            conn= DataBaseConnection.getConnection();
+
+        String sql ="UPDATE agent SET rating="+rating+" where agent_id="+agent_id;
+        create = conn.prepareStatement(sql);
+        create.executeUpdate(sql);
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public static void update_commission(int commission){
+
+        try {
+            conn= DataBaseConnection.getConnection();
+
+            String sql ="UPDATE agent SET commission_proc="+commission+" where agent_id="+ Constants.ID_save.agent;
+            create = conn.prepareStatement(sql);
+            create.executeUpdate(sql);
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

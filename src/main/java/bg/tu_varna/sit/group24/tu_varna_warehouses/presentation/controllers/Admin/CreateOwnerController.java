@@ -2,7 +2,6 @@ package bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Adm
 
 import bg.tu_varna.sit.group24.tu_varna_warehouses.application.CreatingNewWindows;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
-import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Timer;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.LoginRepository;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.OwnerRepository;
 import javafx.event.EventHandler;
@@ -63,6 +62,8 @@ public class CreateOwnerController implements EventHandler<MouseEvent> {
         String pass1=password1.getText();
         String pass2=password2.getText();
 
+
+
         boolean valid=true;
 
         if(name1.length()==0){
@@ -74,36 +75,39 @@ public class CreateOwnerController implements EventHandler<MouseEvent> {
             errorMessage.setText("The username field is empty");
             valid=false;
         }
-        else if(pass1.length()==0||pass2.length()==0){
-            errorMessage.setText("One or both of the password fields are empty!");
+        else if(pass1.length()<5){
+            errorMessage.setText("Your password is not strong enough");
             valid=false;
         }
-        else if(pass1.compareTo(pass1)==1){
+        else if(pass1.equals(pass2)==false){
             errorMessage.setText("You need to the same password on fields!");
             valid=false;
         }
 
-        if( valid){
+        System.out.println("pass1"+pass1);
+        System.out.println("pass2"+pass2);
+
+        if( valid) {
             errorMessage.setText("");
+
+
+            if (!LoginRepository.isUsedName(login_name)) {
+
+
+                int temp = LoginRepository.CreateLogin(login_name, pass1);
+
+                System.out.println(temp);
+
+                OwnerRepository.CreateOwner(name1, temp);
+
+                errorMessage.setText("You created a owner account successfully");
+
+            } else {
+                errorMessage.setText("The username " + login_name + " is already taken");
+            }
         }
 
 
-        if(!LoginRepository.isUsedName(login_name)) {
 
-
-            int temp = LoginRepository.CreateLogin(login_name, pass1);
-
-            System.out.println(temp);
-
-            OwnerRepository.CreateOwner(name1, temp);
-
-        }else{
-            errorMessage.setText("The username "+login_name+" is already taken");
-        }
-
-
-
-        Timer.Timer(10000);
-        handle(mouseEvent);
     }
 }

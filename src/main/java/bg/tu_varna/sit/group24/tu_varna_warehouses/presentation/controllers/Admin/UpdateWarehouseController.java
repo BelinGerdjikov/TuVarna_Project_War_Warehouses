@@ -131,6 +131,7 @@ public class UpdateWarehouseController implements EventHandler<MouseEvent> {
             }
 
             if (Climate_check.isSelected()) {
+                errorMessage.setText("");
                 WareHouseRepository.UpdateWareHouseClimate(id_temp,choice_box_fx.getValue());
             }
 

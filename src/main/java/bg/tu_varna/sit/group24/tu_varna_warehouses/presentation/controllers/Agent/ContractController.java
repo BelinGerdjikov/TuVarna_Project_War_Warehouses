@@ -91,14 +91,14 @@ public class ContractController implements EventHandler<MouseEvent> {
         BackButton.setOnMouseClicked(this::BackButton);
 
 
-        setTableView();
+
 
         Id_warehouse.setCellValueFactory(new PropertyValueFactory<>("ID"));
         address.setCellValueFactory(new PropertyValueFactory<>("Address"));
         size.setCellValueFactory(new PropertyValueFactory<>("Size"));
         price.setCellValueFactory(new PropertyValueFactory<>("Cost"));
         climate.setCellValueFactory(new PropertyValueFactory<>("Climate"));
-
+        setTableView();
 
 //int dayssss=startDate.-endDate;
 
@@ -146,15 +146,7 @@ public class ContractController implements EventHandler<MouseEvent> {
             int days=(startDate.compareTo(endDate)*-1+1);
 
             int owner= WareHouseRepository.finding_owner(Integer.parseInt(warehouse_id.getText()));
-            ////////Only for testing
 
-            /////////////////
-
-
-            //System.out.println(startDate);
-
-
-            //System.out.println(
 
             double full_price=WareHouseRepository.finding_price(Integer.parseInt(warehouse_id.getText()))*AgentRepository.get_commission(Constants.ID_save.agent);
 
@@ -162,11 +154,12 @@ public class ContractController implements EventHandler<MouseEvent> {
                 errrorMessage.setText("GOOOOOOOOOOOD");
                 ContractRepository.CreateContract(tenant.getText(),Constants.ID_save.agent,owner,Integer.parseInt(warehouse_id.getText()),startDate.toString(),endDate.toString(),full_price);
                 //ContractRepository.CreateContract("Belin",9,3,3,"2021-12-22","2021-12-24",300.5);
+                WareHouseRepository.refresh();
             }
 
 
 
-            System.out.println(tenant.getText()+"/"+Constants.ID_save.agent+"/"+owner+"/"+Integer.parseInt(warehouse_id.getText())+"/"+startDate.toString()+"/"+endDate.toString()+"/"+full_price);
+
 
             //errrorMessage.setText(String.valueOf(localDate));
 
@@ -177,6 +170,7 @@ public class ContractController implements EventHandler<MouseEvent> {
 
 
             valid=true;
+            setTableView();
 
         }catch(Exception ex){
             errrorMessage.setText("Unvalid input");
