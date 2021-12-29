@@ -86,8 +86,8 @@ public class ContractController implements EventHandler<MouseEvent> {
     @FXML
     private void initialize() throws SQLException {
 
-        create.setOnMouseClicked(this::handle);
-        calculate.setOnMouseClicked(this::calculate);
+        create.setOnMouseClicked(this::create);
+        calculate.setOnMouseClicked(this::handle);
         BackButton.setOnMouseClicked(this::BackButton);
 
 
@@ -106,21 +106,6 @@ public class ContractController implements EventHandler<MouseEvent> {
     }
     @Override
     public void handle(MouseEvent mouseEvent) {
-        ContractRepository.CreateContract("Belin",9,3,3,"2021-12-22","2021-12-24",300.5);
-
-    }
-
-
-    private void BackButton(MouseEvent mouseEvent) {
-        Stage stage = (Stage)BackButton.getScene().getWindow();
-        CreatingNewWindows newWindows = new CreatingNewWindows();
-        URL path= getClass().getResource(Constants.MenuWindow.MenuWindowAgent);
-        newWindows.create(path,"Create Warehouse");
-        stage.hide();
-    }
-
-
-    private void calculate(MouseEvent mouseEvent) {
         boolean valid=true;
         try {
 
@@ -129,12 +114,70 @@ public class ContractController implements EventHandler<MouseEvent> {
 
             if (!(Integer.parseInt(warehouse_id.getText()) > 0)) {
                 valid=false;
-                errrorMessage.setText("1");
+                errrorMessage.setText("Wrong ID");
             }
 
             if(!(tenant.getText().length()>4)){
                 valid=false;
-                errrorMessage.setText("2");
+                errrorMessage.setText("The name need to be at least 5 symbols");
+            }
+
+
+
+            if(startDate.compareTo(endDate)*-1+1<2){
+                errrorMessage.setText("Unvalid time frame");
+            }
+
+            int days=(startDate.compareTo(endDate)*-1+1);
+
+            int owner= WareHouseRepository.finding_owner(Integer.parseInt(warehouse_id.getText()));
+            //System.out.println(days);.
+
+            double full_price=0;
+            full_price=WareHouseRepository.finding_price(Integer.parseInt(warehouse_id.getText()))*days;
+
+            full_price=full_price+(full_price*((AgentRepository.get_commission(Constants.ID_save.agent)))/100);
+
+
+            if(valid){
+                Expence.setText("The cost will be "+full_price+"$");
+            }
+
+
+            valid=true;
+
+
+        }catch(Exception ex){
+            errrorMessage.setText("Unvalid input");
+        }
+
+    }
+
+
+    private void BackButton(MouseEvent mouseEvent) {
+        Stage stage = (Stage)BackButton.getScene().getWindow();
+        CreatingNewWindows newWindows = new CreatingNewWindows();
+        URL path= getClass().getResource(Constants.MenuWindow.MenuWindowAgent);
+        newWindows.create(path,"Agent Menu");
+        stage.hide();
+    }
+
+
+    private void create(MouseEvent mouseEvent) {
+        boolean valid=true;
+        try {
+
+            startDate=startdate.getValue();
+            endDate=enddate.getValue();
+
+            if (!(Integer.parseInt(warehouse_id.getText()) > 0)) {
+                valid=false;
+                errrorMessage.setText("Wrong ID");
+            }
+
+            if(!(tenant.getText().length()>4)){
+                valid=false;
+                errrorMessage.setText("The name need to be at least 5 symbols");
             }
 
 
@@ -148,7 +191,11 @@ public class ContractController implements EventHandler<MouseEvent> {
             int owner= WareHouseRepository.finding_owner(Integer.parseInt(warehouse_id.getText()));
 
 
-            double full_price=WareHouseRepository.finding_price(Integer.parseInt(warehouse_id.getText()))*AgentRepository.get_commission(Constants.ID_save.agent);
+
+            double full_price=0;
+            full_price=WareHouseRepository.finding_price(Integer.parseInt(warehouse_id.getText()))*days;
+
+            full_price=full_price+(full_price*((AgentRepository.get_commission(Constants.ID_save.agent)))/100);
 
             if(valid){
                 errrorMessage.setText("GOOOOOOOOOOOD");
@@ -156,17 +203,6 @@ public class ContractController implements EventHandler<MouseEvent> {
                 //ContractRepository.CreateContract("Belin",9,3,3,"2021-12-22","2021-12-24",300.5);
                 WareHouseRepository.refresh();
             }
-
-
-
-
-
-            //errrorMessage.setText(String.valueOf(localDate));
-
-
-
-
-
 
 
             valid=true;

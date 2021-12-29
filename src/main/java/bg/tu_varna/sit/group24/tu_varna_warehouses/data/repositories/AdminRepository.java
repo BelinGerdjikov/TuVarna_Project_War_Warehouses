@@ -13,9 +13,7 @@ public class AdminRepository {
     static Connection conn;
     static PreparedStatement create;
     static String sql;
-    public static void CreateAdmin(){
 
-    }
 
 
 

@@ -98,9 +98,9 @@ public class WareHouseRepository {
                 conn= DataBaseConnection.getConnection();
 
 
-                String sql = "INSERT INTO warehouse (address,climate,cost,size,owner_id) VALUES" +
+                String sql = "INSERT INTO warehouse (address,climate,cost,size,owner_id,is_available) VALUES" +
                         " ('"+address1+"','"+climate1+"',"+cost_per_day+","
-                        +size1+","+owner_id1+")";
+                        +size1+","+owner_id1+",true)";
 
 
                 create = conn.prepareStatement(sql);
@@ -112,6 +112,29 @@ public class WareHouseRepository {
 
     }
 
+
+    public static boolean warehouse_exist(int warehouse_ID){
+
+        try{
+
+            conn= DataBaseConnection.getConnection();
+
+            String sql = "SELECT * FROM warehouse where warehouse_id="+warehouse_ID;
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery(sql);
+
+            while(rs.next()){
+
+                return true;
+            }
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return false;
+    }
 
 
     public static int finding_owner(int warehouse_ID){
@@ -149,9 +172,11 @@ public class WareHouseRepository {
             ResultSet rs = ps.executeQuery(sql);
 
             while(rs.next()){
-
+                System.out.println("cost: "+rs.getInt("cost"));
                 return rs.getInt("cost");
             }
+
+
 
         } catch(SQLException e) {
             e.printStackTrace();

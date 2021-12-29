@@ -77,6 +77,7 @@ public class AgentRepository {
             ResultSet rs = ps.executeQuery(sql);
 
             while(rs.next()){
+                System.out.println("Commission: "+rs.getInt("commission_proc"));
 
                 return rs.getInt("commission_proc");
             }

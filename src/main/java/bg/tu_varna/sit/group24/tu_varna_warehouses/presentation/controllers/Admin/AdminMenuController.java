@@ -65,7 +65,7 @@ public class AdminMenuController implements EventHandler<MouseEvent> {
     public void Reference(MouseEvent mouseEvent){
         Stage stage = (Stage)backButton.getScene().getWindow();
         CreatingNewWindows newWindows = new CreatingNewWindows();
-        URL path= getClass().getResource(Constants.Reference.Reference);
+        URL path= getClass().getResource(Constants.Reference.ReferenceOwner);
         newWindows.create(path,"Reference");
         stage.hide();
     }

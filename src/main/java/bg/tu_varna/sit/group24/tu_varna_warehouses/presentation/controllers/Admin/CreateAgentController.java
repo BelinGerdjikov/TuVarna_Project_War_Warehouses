@@ -1,6 +1,7 @@
 package bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin;
 
 import bg.tu_varna.sit.group24.tu_varna_warehouses.application.CreatingNewWindows;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.business.services.CreatingAcounts;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.AgentRepository;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.LoginRepository;
@@ -62,44 +63,23 @@ public class CreateAgentController implements EventHandler<MouseEvent> {
 
     public void create(MouseEvent mouseEvent) {
 
-        String username1=username.getText();
+        String login_name=username.getText();
         String name1=name.getText();
         String pass1=password1.getText();
         String pass2=password2.getText();
 
 
+        String valid= CreatingAcounts.input_validation(name1,login_name,pass1,pass2);
 
-        boolean valid=true;
 
-        if(name1.isEmpty()){
-            error.setText("The name field is empty");
-
-            valid=false;
-        }
-        else if(username1.length()==0){
-            error.setText("The username field is empty");
-            valid=false;
-        }
-        else if(pass1.length()<5){
-            error.setText("Your password is not strong enough");
-            valid=false;
-        }
-        else if(pass1.equals(pass2)==false){
-            error.setText("You need to the same password on fields!");
-            valid=false;
-        }
-
-        System.out.println("pass1"+pass1);
-        System.out.println("pass2"+pass2);
-
-        if( valid) {
+        if( valid=="good") {
             error.setText("");
 
 
-            if (!LoginRepository.isUsedName(username1)) {
+            if (!LoginRepository.isUsedName(login_name)) {
 
 
-                int temp = LoginRepository.CreateLogin(username1, pass1);
+                int temp = LoginRepository.CreateLogin(login_name, pass1);
 
                 System.out.println(temp);
 
@@ -108,7 +88,7 @@ public class CreateAgentController implements EventHandler<MouseEvent> {
                 error.setText("You created a agent account successfully");
 
             } else {
-                error.setText("The username " + username1 + " is already taken");
+                error.setText("The username " + login_name + " is already taken");
             }
 
         }

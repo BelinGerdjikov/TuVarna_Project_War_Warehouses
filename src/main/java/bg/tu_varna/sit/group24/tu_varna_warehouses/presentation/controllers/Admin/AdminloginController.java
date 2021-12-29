@@ -43,7 +43,6 @@ public class AdminloginController implements EventHandler<MouseEvent> {
     public void handle(MouseEvent mouseEvent) {
 
 
-
         if(AdminRepository.loginINAdmin(LoginRepository.login_cheak(Adminusername.getText(),Adminpassword.getText()))>0){
             Stage stage = (Stage)loginButton.getScene().getWindow();
             CreatingNewWindows newWindows = new CreatingNewWindows();

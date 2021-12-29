@@ -96,7 +96,7 @@ public class CreateWarehouseController implements EventHandler<MouseEvent> {
                 stage.hide();
             }
         } catch (Exception exception) {
-            System.out.println("Neshto se bygna "+exception.getMessage());
+            //System.out.println("Neshto se bygna "+exception.getMessage());
 
         }
     }

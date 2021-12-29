@@ -1,6 +1,7 @@
 package bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories;
 
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.access.DataBaseConnection;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.models.OwnerStatisticsAdmin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -75,4 +76,37 @@ public class OwnerRepository {
 
         return -1;
     }
+
+
+    public static OwnerStatisticsAdmin GetOwnerStatistics(int owner_id,String owner_name){
+        OwnerStatisticsAdmin temp;
+        try{
+            conn= DataBaseConnection.getConnection();
+            String sql = "SELECT * FROM contract where owner_id="+owner_id;
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery(sql);
+
+            double x=0;
+            double y;
+            int deals=0;
+            double profit=0;
+            while(rs.next()){
+
+                y=rs.getDouble("cost");
+                deals++;
+                x=y*100/(100+AgentRepository.get_commission(rs.getInt("agent_id")));
+                profit=profit+x;
+
+            }
+
+            temp=new OwnerStatisticsAdmin(owner_id,owner_name,deals,profit);
+
+            return temp;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
+        return null;
+    }
+
 }

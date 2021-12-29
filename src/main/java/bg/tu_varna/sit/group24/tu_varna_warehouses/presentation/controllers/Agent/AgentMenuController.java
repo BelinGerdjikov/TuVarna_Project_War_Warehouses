@@ -37,6 +37,9 @@ public class AgentMenuController implements EventHandler<MouseEvent> {
     @FXML
     private Label errorMessage;
 
+    @FXML
+    private Button wish_list;
+
 
     @FXML
     private void initialize(){
@@ -47,8 +50,19 @@ public class AgentMenuController implements EventHandler<MouseEvent> {
         errorMessage.setText("");
         int temp=(AgentRepository.get_commission(Constants.ID_save.agent));
         comm_now.setText(String.valueOf(temp)+"%");
-
+        wish_list.setOnMouseClicked(this::WishList);
     }
+
+
+    public void WishList(MouseEvent mouseEvent) {
+
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        CreatingNewWindows newWindows = new CreatingNewWindows();
+        URL path = getClass().getResource(Constants.Update.WishList);
+        newWindows.create(path, "WishList");
+        stage.hide();
+    }
+
 
     public void update(MouseEvent mouseEvent) {
         try {

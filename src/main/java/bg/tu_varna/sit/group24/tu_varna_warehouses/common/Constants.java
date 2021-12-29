@@ -14,10 +14,6 @@ public class Constants {
 
     public static class Reference{
 
-        public static final String Reference="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/Reference.fxml";
-
-        public static final String ReferenceAgent="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/ReferenceAgent.fxml";
-
         public static final String ReferenceOwner="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/ReferenceOwner.fxml";
 
     }
@@ -27,6 +23,8 @@ public class Constants {
     }
 
     public static class Update{
+
+        public static final String WishList="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/AgentWishList.fxml";
 
         public static final String Reference="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/UpdateWarehouse.fxml";
 

@@ -1,6 +1,7 @@
 package bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin;
 
 import bg.tu_varna.sit.group24.tu_varna_warehouses.application.CreatingNewWindows;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.business.services.CreatingAcounts;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.LoginRepository;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.OwnerRepository;
@@ -63,31 +64,10 @@ public class CreateOwnerController implements EventHandler<MouseEvent> {
         String pass2=password2.getText();
 
 
+        String valid=CreatingAcounts.input_validation(name1,login_name,pass1,pass2);
 
-        boolean valid=true;
 
-        if(name1.length()==0){
-            errorMessage.setText("The name field is empty");
-
-            valid=false;
-        }
-        else if(login_name.length()==0){
-            errorMessage.setText("The username field is empty");
-            valid=false;
-        }
-        else if(pass1.length()<5){
-            errorMessage.setText("Your password is not strong enough");
-            valid=false;
-        }
-        else if(pass1.equals(pass2)==false){
-            errorMessage.setText("You need to the same password on fields!");
-            valid=false;
-        }
-
-        System.out.println("pass1"+pass1);
-        System.out.println("pass2"+pass2);
-
-        if( valid) {
+        if( valid=="good") {
             errorMessage.setText("");
 
 
@@ -96,7 +76,7 @@ public class CreateOwnerController implements EventHandler<MouseEvent> {
 
                 int temp = LoginRepository.CreateLogin(login_name, pass1);
 
-                System.out.println(temp);
+
 
                 OwnerRepository.CreateOwner(name1, temp);
 
@@ -105,6 +85,8 @@ public class CreateOwnerController implements EventHandler<MouseEvent> {
             } else {
                 errorMessage.setText("The username " + login_name + " is already taken");
             }
+        }else{
+            errorMessage.setText(valid);
         }
 
 
