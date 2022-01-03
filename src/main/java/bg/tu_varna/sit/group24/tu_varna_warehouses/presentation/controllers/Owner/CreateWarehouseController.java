@@ -39,6 +39,7 @@ public class CreateWarehouseController implements EventHandler<MouseEvent> {
     @FXML
     private void initialize(){
 
+        //setting the choicebox
         climate.getItems().add("Cold");
         climate.getItems().add("Cool");
         climate.getItems().add("Hot");
@@ -64,39 +65,37 @@ public class CreateWarehouseController implements EventHandler<MouseEvent> {
 
 
     public void create(MouseEvent mouseEvent) {
-
+//creating warehouse
         boolean valid = true;
 
 
 
 
-
+//validating
         try {
             if (address.getText().length() == 0) {
                 errorMessage.setText("Your address field is empty");
+                valid=false;
 
             } else if (Double.parseDouble(cost_per_day.getText()) > 2) {
                 errorMessage.setText("The cost of the rent of the warehouse must be more then 2 dollar per day");
+                valid=false;
 
             } else if (Integer.parseInt(size.getText()) > 3) {
                 errorMessage.setText("The size of the warehouse must be more then 3 square meters");
+                valid=false;
             }
 
 
+          if(valid) {
+           //Adding to the warehouse table
+             WareHouseRepository.CreateWareHouse(address.getText(), Double.parseDouble(cost_per_day.getText()), Integer.parseInt(size.getText()), climate.getValue(), Constants.ID_save.owner);
 
+           errorMessage.setText("You added a warehouse");
+          }
 
-            WareHouseRepository.CreateWareHouse(address.getText(), Double.parseDouble(cost_per_day.getText()), Integer.parseInt(size.getText()), climate.getValue(), Constants.ID_save.owner);
-
-
-            if (valid) {
-                Stage stage = (Stage) backButton.getScene().getWindow();
-                CreatingNewWindows newWindows = new CreatingNewWindows();
-                URL path = getClass().getResource(Constants.MenuWindow.MenuWindowOwner);
-                newWindows.create(path, "Owner Menu");
-                stage.hide();
-            }
         } catch (Exception exception) {
-            //System.out.println("Neshto se bygna "+exception.getMessage());
+
 
         }
     }

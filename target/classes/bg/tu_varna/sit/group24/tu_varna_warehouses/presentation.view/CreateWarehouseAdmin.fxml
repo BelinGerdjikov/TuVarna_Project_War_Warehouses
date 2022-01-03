@@ -4,29 +4,58 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin.CreateWarehouseAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin.CreateWarehouseAdminController">
    <children>
-      <Label layoutX="261.0" layoutY="51.0" text="Create Warehouse">
+      <ImageView fitHeight="430.0" fitWidth="631.0" layoutX="-15.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/warehouse%20(1).jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="186.0" layoutY="24.0" opacity="0.65" prefHeight="371.0" prefWidth="241.0" style="-fx-background-color: silver;" />
+      <AnchorPane layoutX="191.0" layoutY="30.0" opacity="0.87" prefHeight="359.0" prefWidth="231.0" style="-fx-background-color: C99178;" />
+      <Label layoutX="237.0" layoutY="39.0" opacity="0.55" text="Create Warehouse">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="116.0" layoutY="152.0" text="Address" />
-      <Label layoutX="118.0" layoutY="199.0" text="Size" />
-      <Label layoutX="116.0" layoutY="248.0" text="Cost per day" />
-      <Label layoutX="118.0" layoutY="300.0" text="Climate" />
-      <TextField fx:id="address" layoutX="236.0" layoutY="148.0" />
-      <TextField fx:id="size" alignment="CENTER_RIGHT" layoutX="237.0" layoutY="195.0" promptText="70" />
-      <TextField fx:id="cost_per_day" alignment="TOP_RIGHT" layoutX="236.0" layoutY="244.0" promptText="0" />
-      <Button fx:id="create_warehouse" layoutX="100.0" layoutY="412.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" text="Create warehouse" />
-      <Button fx:id="backButton" layoutX="387.0" layoutY="412.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="43.0" text="Back" />
-      <ChoiceBox fx:id="climate" layoutX="236.0" layoutY="296.0" prefWidth="150.0" />
-      <Label fx:id="errorMessage" layoutX="235.0" layoutY="341.0" />
-      <Label layoutX="393.0" layoutY="199.0" text="sm" />
-      <TextField fx:id="owner_id" layoutX="237.0" layoutY="106.0" />
-      <Label layoutX="114.0" layoutY="110.0" text="Owner id" />
+      <TextField fx:id="address" layoutX="237.0" layoutY="117.0" promptText="Address" />
+      <TextField fx:id="size" layoutX="237.0" layoutY="155.0" promptText="Size" />
+      <TextField fx:id="cost_per_day" layoutX="237.0" layoutY="195.0" promptText="Cost per day" />
+      <Button fx:id="create_warehouse" layoutX="237.0" layoutY="291.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" text="Create warehouse" />
+      <Button fx:id="backButton" layoutX="237.0" layoutY="333.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" text="Back" />
+      <ChoiceBox fx:id="climate" layoutX="237.0" layoutY="234.0" prefWidth="150.0" />
+      <Label fx:id="errorMessage" layoutX="200.0" layoutY="265.0" prefHeight="25.0" prefWidth="306.0" />
+      <Label layoutX="394.0" layoutY="159.0" opacity="0.55" text="sm" />
+      <TextField fx:id="owner_id" layoutX="237.0" layoutY="81.0" promptText="Owner ID" />
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="202.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/temperature.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="202.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/house.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="202.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/price-tag.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="25.0" layoutX="202.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/maps.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="208.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/name.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

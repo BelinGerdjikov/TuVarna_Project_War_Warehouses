@@ -17,7 +17,7 @@ public class OwnerRepository {
 
 
     public static void CreateOwner(String owner_name1,int login_id1){
-
+//Creating Owner Account
             try{
                 conn= DataBaseConnection.getConnection();
 
@@ -34,7 +34,7 @@ public class OwnerRepository {
     }
 
     public static int Owner_id_check(int owner_id){
-
+//Checking if the given owner ID is created in the database
         try{
 
             conn= DataBaseConnection.getConnection();
@@ -56,7 +56,7 @@ public class OwnerRepository {
     }
 
     public static int loginINOwner(int loginId){
-
+//finding the account corresponding to the login table
         try{
 
             conn= DataBaseConnection.getConnection();
@@ -79,6 +79,7 @@ public class OwnerRepository {
 
 
     public static OwnerStatisticsAdmin GetOwnerStatistics(int owner_id,String owner_name){
+        //Getting the owner statistics
         OwnerStatisticsAdmin temp;
         try{
             conn= DataBaseConnection.getConnection();
@@ -95,10 +96,12 @@ public class OwnerRepository {
                 y=rs.getDouble("cost");
                 deals++;
                 x=y*100/(100+AgentRepository.get_commission(rs.getInt("agent_id")));
+                //math formula that show how much the owner gote from the deals
                 profit=profit+x;
 
             }
 
+            //returning a model OwnerStatisticsAdmin
             temp=new OwnerStatisticsAdmin(owner_id,owner_name,deals,profit);
 
             return temp;

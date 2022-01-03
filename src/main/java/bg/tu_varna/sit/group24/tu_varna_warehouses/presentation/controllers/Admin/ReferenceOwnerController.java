@@ -50,14 +50,14 @@ public class ReferenceOwnerController implements EventHandler<MouseEvent> {
 
 
         Back.setOnMouseClicked(this::handle);
-
+//Setting up columns of the TableView
         Owner_id.setCellValueFactory(new PropertyValueFactory<>("Owner_id"));
         Owner_name.setCellValueFactory(new PropertyValueFactory<>("Owner_name"));
         Deals.setCellValueFactory(new PropertyValueFactory<>("Deals"));
         Profit.setCellValueFactory(new PropertyValueFactory<>("Profit"));
 
 
-
+//Adding the info to Tableview
         setTableView();
 
 
@@ -66,6 +66,7 @@ public class ReferenceOwnerController implements EventHandler<MouseEvent> {
     }
 
     public void setTableView() throws SQLException {
+        //Setting / resetting the information in the TableView
         conn= DataBaseConnection.getConnection();
 
         String sql = "SELECT owner_id,owner_name FROM owner1";
@@ -78,7 +79,7 @@ public class ReferenceOwnerController implements EventHandler<MouseEvent> {
             oblist.add(OwnerRepository.GetOwnerStatistics(rs.getInt("owner_id"),rs.getString("owner_name")));
 
         }
-
+//adding to the tableview
         Display.setItems(oblist);
 
 

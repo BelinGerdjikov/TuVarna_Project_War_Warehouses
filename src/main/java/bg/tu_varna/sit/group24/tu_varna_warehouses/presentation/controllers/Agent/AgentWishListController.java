@@ -3,7 +3,7 @@ package bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Age
 import bg.tu_varna.sit.group24.tu_varna_warehouses.application.CreatingNewWindows;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.access.DataBaseConnection;
-import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.WashListRepository;
+import bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories.WishListRepository;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.models.WarehouseModel;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.models.WishListModel;
 import javafx.collections.FXCollections;
@@ -77,7 +77,7 @@ public class AgentWishListController implements EventHandler<MouseEvent> {
         Remove.setOnMouseClicked(this::Remove);
 
         Favorite_ID.setCellValueFactory(new PropertyValueFactory<>("Warehouse_id"));
-
+//setting up the columns to the tableview
 
         Id_warehouse.setCellValueFactory(new PropertyValueFactory<>("ID"));
         address.setCellValueFactory(new PropertyValueFactory<>("Address"));
@@ -85,7 +85,7 @@ public class AgentWishListController implements EventHandler<MouseEvent> {
         price.setCellValueFactory(new PropertyValueFactory<>("Cost"));
         climate.setCellValueFactory(new PropertyValueFactory<>("Climate"));
         try {
-
+//Setting the information in the TableView
             setTableView2();
             setTableView();
         }catch (Exception ex){
@@ -98,12 +98,13 @@ public class AgentWishListController implements EventHandler<MouseEvent> {
     }
 
     public void Add(MouseEvent mouseEvent) {
+        //Add to the wishlist table
         try{
 
             int id=Integer.parseInt(warehouse_id.getText());
 
 
-            errorMassage.setText(WashListRepository.Add_WishList(id));
+            errorMassage.setText(WishListRepository.Add_WishList(id));
 
             setTableView2();
 
@@ -114,14 +115,16 @@ public class AgentWishListController implements EventHandler<MouseEvent> {
     }
 
     public void Remove(MouseEvent mouseEvent) {
+        //Remove of the wishlist table
         try {
 
             int id=Integer.parseInt(warehouse_id.getText());
 
-            WashListRepository.Remove(id);
+            WishListRepository.Remove(id);
 
 
             setTableView2();
+            errorMassage.setText("");
 
         } catch (Exception ex) {
             ex.getMessage();
@@ -138,6 +141,7 @@ public class AgentWishListController implements EventHandler<MouseEvent> {
     }
 
     public void setTableView2() throws SQLException{
+        //Setting / resetting the information in the TableView2
         try {
             conn= DataBaseConnection.getConnection();
 
@@ -160,6 +164,7 @@ public class AgentWishListController implements EventHandler<MouseEvent> {
     }
 
     public void setTableView() throws SQLException {
+        //Setting / resetting the information in the TableView
         conn= DataBaseConnection.getConnection();
 
         String sql = "SELECT warehouse_id,address,cost,size,climate FROM warehouse";

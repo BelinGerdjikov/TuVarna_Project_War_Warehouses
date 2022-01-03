@@ -44,7 +44,7 @@ public class AdminMenuController implements EventHandler<MouseEvent> {
         Agents_ratings.setOnMouseClicked(this::Agents_ratings);
     }
 
-
+    //Дepending on the pressed button, the corresponding window opens
 
     public void Agents_ratings(MouseEvent mouseEvent){
         Stage stage = (Stage)backButton.getScene().getWindow();

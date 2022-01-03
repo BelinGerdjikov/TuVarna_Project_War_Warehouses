@@ -14,14 +14,17 @@ public class CreatingNewWindows {
         try{
 
             root= FXMLLoader.load(path);
-            Stage stage = new Stage();
-            stage.setTitle(Title);
-            stage.setScene(new Scene(root));
-            stage.show();
+            Scene scene = new Scene(root);//creating scene
+            Stage stage = new Stage();//creating stage
+            stage.setTitle(Title);//renaming the stage
+            String css = this.getClass().getResource("/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/ApplicationStyle.css").toExternalForm();//getting the full address of the file
+            scene.getStylesheets().add(css);//addling the css file
+            stage.setScene(scene);
+            stage.show();//showing the window
 
         }
-        catch(IOException ex){
-            ex.printStackTrace();
+        catch(IOException ex){//if the program crash
+            ex.printStackTrace();//displaying the problem
         }
     }
 }

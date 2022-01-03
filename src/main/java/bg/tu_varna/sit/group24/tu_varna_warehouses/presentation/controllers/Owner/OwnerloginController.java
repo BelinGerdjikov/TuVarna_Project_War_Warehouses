@@ -43,7 +43,11 @@ public class OwnerloginController implements EventHandler<MouseEvent>
 
     @Override
     public void handle(MouseEvent mouseEvent) {
+
+        //getting the login id
+        //getting the login id
         Constants.ID_save.owner=OwnerRepository.loginINOwner(LoginRepository.login_cheak(Ownerusername.getText(),Ownerpassword.getText()));
+        //getting the login id
         if(Constants.ID_save.owner>0){
             Stage stage = (Stage)loginButton.getScene().getWindow();
             CreatingNewWindows newWindows = new CreatingNewWindows();

@@ -5,10 +5,19 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="548.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin.AgentSortingContract">
+<AnchorPane prefHeight="446.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin.AgentSortingContract">
    <children>
+      <ImageView fitHeight="460.0" fitWidth="678.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/service-2.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="9.0" layoutY="17.0" opacity="0.67" prefHeight="418.0" prefWidth="662.0" style="-fx-background-color: silver;" />
+      <AnchorPane layoutX="15.0" layoutY="23.0" opacity="0.75" prefHeight="405.0" prefWidth="650.0" style="-fx-background-color: C99178;" />
       <TableView fx:id="Display" layoutX="31.0" layoutY="40.0" prefHeight="290.0" prefWidth="618.0">
         <columns>
           <TableColumn fx:id="Agent_id" prefWidth="75.0" text="Agent id" />
@@ -19,12 +28,12 @@
             <TableColumn fx:id="Earned_money" prefWidth="154.0" text="Earned money" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="492.0" layoutY="464.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="93.0" text="Back" />
-      <Button fx:id="Update_rating" layoutX="492.0" layoutY="391.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="93.0" text="Update rating" />
-      <Label layoutX="70.0" layoutY="402.0" text="Agent ID" />
-      <Label layoutX="70.0" layoutY="475.0" text="Rating" />
-      <TextField fx:id="agent_id_update" layoutX="150.0" layoutY="398.0" />
-      <TextField fx:id="rating_update" layoutX="150.0" layoutY="471.0" />
-      <Label fx:id="ErrorMessage" layoutX="338.0" layoutY="360.0" />
+      <Button fx:id="back" layoutX="421.0" layoutY="379.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="164.0" text="Back" />
+      <Button fx:id="Update_rating" layoutX="421.0" layoutY="333.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="164.0" text="Update rating" />
+      <Label layoutX="70.0" layoutY="352.0" opacity="0.65" text="Agent ID" />
+      <Label layoutX="76.0" layoutY="390.0" opacity="0.65" text="Rating" />
+      <TextField fx:id="agent_id_update" layoutX="150.0" layoutY="348.0" />
+      <TextField fx:id="rating_update" layoutX="150.0" layoutY="386.0" />
+      <Label fx:id="ErrorMessage" layoutX="307.0" layoutY="344.0" prefHeight="63.0" prefWidth="95.0" />
    </children>
 </AnchorPane>

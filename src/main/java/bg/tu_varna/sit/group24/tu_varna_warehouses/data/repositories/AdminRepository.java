@@ -18,7 +18,7 @@ public class AdminRepository {
 
 
     public static int loginINAdmin(int loginId){
-
+//finding the account corresponding to the login table
        try{
 
            conn= DataBaseConnection.getConnection();

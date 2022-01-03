@@ -93,18 +93,20 @@ public class UpdateWarehouseController implements EventHandler<MouseEvent> {
         }
 
         if(id_temp>0) {
+            //if the address checkbox is selected and have a valid info
             if (address_check.isSelected()) {
                 if (address_fx.getText().length() > 4) {
-                    WareHouseRepository.UpdateWareHouseAddress(id_temp,address_fx.getText());
+                    WareHouseRepository.UpdateWareHouseAddress(id_temp,address_fx.getText());//update address
 
                 } else {
                     errorMessage.setText("The address need to have at least 4 symbols");
                 }
             }
+            //if the size checkbox is selected and have a valid info
             if (Size_check.isSelected()) {
                 try {
                     if (Integer.parseInt(size_fx.getText()) > 3) {
-                        WareHouseRepository.UpdateWareHouseSize(id_temp,Integer.parseInt(size_fx.getText()));
+                        WareHouseRepository.UpdateWareHouseSize(id_temp,Integer.parseInt(size_fx.getText()));//update size
 
                     } else {
                         errorMessage.setText("The size need to be at least 4 square meters");
@@ -114,12 +116,12 @@ public class UpdateWarehouseController implements EventHandler<MouseEvent> {
                 }
 
             }
-
+//if the cost checkbox is selected and have a valid info
             if (Cost_check.isSelected()) {
                 try {
                     Double Cost_temp = Double.parseDouble(cost_fx.getText());
                     if (Cost_temp > 4) {
-                        WareHouseRepository.UpdateWareHouseCost(id_temp,Cost_temp);
+                        WareHouseRepository.UpdateWareHouseCost(id_temp,Cost_temp);//update cost
 
                     } else {
                         errorMessage.setText("The cost of the warehouse need to be at least 4$");
@@ -129,10 +131,10 @@ public class UpdateWarehouseController implements EventHandler<MouseEvent> {
                 }
 
             }
-
+//if the cost checkbox is selected
             if (Climate_check.isSelected()) {
                 errorMessage.setText("");
-                WareHouseRepository.UpdateWareHouseClimate(id_temp,choice_box_fx.getValue());
+                WareHouseRepository.UpdateWareHouseClimate(id_temp,choice_box_fx.getValue());//update climate
             }
 
         }else{
@@ -162,12 +164,15 @@ public class UpdateWarehouseController implements EventHandler<MouseEvent> {
 
         setTableView();
 
+        //setting up the columns to the tableview
+
         ID.setCellValueFactory(new PropertyValueFactory<>("ID"));
         Address.setCellValueFactory(new PropertyValueFactory<>("Address"));
         Size.setCellValueFactory(new PropertyValueFactory<>("Size"));
         Cost.setCellValueFactory(new PropertyValueFactory<>("Cost"));
         Climate.setCellValueFactory(new PropertyValueFactory<>("Climate"));
 
+        //setting up the choicebox
         choice_box_fx.getItems().add("Cold");
         choice_box_fx.getItems().add("Cool");
         choice_box_fx.getItems().add("Hot");
@@ -179,6 +184,7 @@ public class UpdateWarehouseController implements EventHandler<MouseEvent> {
 
 
     public void setTableView() throws SQLException {
+        //Setting / resetting the information in the TableView
         conn= DataBaseConnection.getConnection();
 
         String sql = "SELECT warehouse_id,address,cost,size,climate FROM warehouse";
@@ -191,7 +197,7 @@ public class UpdateWarehouseController implements EventHandler<MouseEvent> {
             oblist.add(new WarehouseModel(rs.getInt("warehouse_id"),rs.getString("address"),rs.getString("size"),rs.getString("cost"),rs.getString("climate")));
 
         }
-
+//adding the ingo to the TableView
         Display.setItems(oblist);
 
 

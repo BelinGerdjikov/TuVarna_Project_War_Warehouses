@@ -49,10 +49,6 @@ public class CreateAgentController implements EventHandler<MouseEvent> {
     @Override
     public void handle(MouseEvent mouseEvent) {
 
-        if(password1!=password2){
-            error.setText("You need to the same password on fields");
-        }
-
         Stage stage = (Stage)back.getScene().getWindow();
         CreatingNewWindows newWindows = new CreatingNewWindows();
         URL path= getClass().getResource(Constants.MenuWindow.MenuWindowAdmin);
@@ -68,14 +64,14 @@ public class CreateAgentController implements EventHandler<MouseEvent> {
         String pass1=password1.getText();
         String pass2=password2.getText();
 
-
+//validating
         String valid= CreatingAcounts.input_validation(name1,login_name,pass1,pass2);
 
 
         if( valid=="good") {
             error.setText("");
 
-
+//checking if the username is already used
             if (!LoginRepository.isUsedName(login_name)) {
 
 
@@ -91,7 +87,11 @@ public class CreateAgentController implements EventHandler<MouseEvent> {
                 error.setText("The username " + login_name + " is already taken");
             }
 
+        }else {
+            error.setText(valid);
         }
+
+
 
 
 

@@ -51,6 +51,14 @@ public class AgentMenuController implements EventHandler<MouseEvent> {
         int temp=(AgentRepository.get_commission(Constants.ID_save.agent));
         comm_now.setText(String.valueOf(temp)+"%");
         wish_list.setOnMouseClicked(this::WishList);
+
+       // if(WishListRepository.availableInWishList(Constants.ID_save.agent)){
+       //     Stage stage = (Stage) backButton.getScene().getWindow();
+       //     CreatingNewWindows newWindows = new CreatingNewWindows();
+       //     URL path = getClass().getResource(Constants.MenuWindow.MenuWindowNotification);
+       //     newWindows.create(path, "Notification");
+//
+       // }
     }
 
 
@@ -71,7 +79,7 @@ public class AgentMenuController implements EventHandler<MouseEvent> {
         int comm=Integer.parseInt(commission_field.getText());
         if(comm>-1&&comm<21){
 
-
+//Updating the repository
         AgentRepository.update_commission(comm);
 
         int temp=(AgentRepository.get_commission(Constants.ID_save.agent));
@@ -98,7 +106,11 @@ public class AgentMenuController implements EventHandler<MouseEvent> {
 
 
     public void client_info(MouseEvent mouseEvent) {
-
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        CreatingNewWindows newWindows = new CreatingNewWindows();
+        URL path = getClass().getResource(Constants.Info.info);
+        newWindows.create(path, "Info");
+        stage.hide();
     }
 
     @Override

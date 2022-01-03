@@ -1,24 +1,31 @@
 #Adminusername{
     -fx-border-color: #F64C72;
-    -fx-text-fill: #C9917BFF;
+    -fx-text-fill: #655246;
     -fx-border-width: 0 0 1 0; // top, right, bottom, left;
-    -fx-prompt-text-fill: #ab8d8d;
+    -fx-prompt-text-fill: #655246;
     -fx-background-color: transparent;
 }
 #Adminpassword{
     -fx-border-color: #F64C72;
     -fx-border-width: 0 0 1 0; // top, right, bottom, left;
     -fx-background-color: transparent;
-    -fx-prompt-text-fill: #ab8d8d;
-    -fx-text-fill:  #C9917BFF;
+    -fx-prompt-text-fill: #655246;
+    -fx-text-fill:  #655246;
 }
 #loginButton{
-    -fx-background-color:#C9917BFF;
+    -fx-background-color:#655246;
     -fx-text-fill: #F64C72;
     -fx-font-size: 14px;
     -fx-padding: 3 30 3 30;
 }
 #loginAdmin{
+    -fx-background-color: #655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#backbutton{
     -fx-background-color: #655246;
     -fx-text-fill: #F64C72;
     -fx-font-size: 14px;
@@ -34,6 +41,382 @@
 
 #loginOwner{
     -fx-background-color: #655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#create_owner_button{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#create_agent_button{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#Create_warehouse{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#Update_warehouse{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 9px;
+    -fx-padding: 3 30 3 30;
+}
+
+#Reference{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#Agents_ratings{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#backButton{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#Agentusername{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#Agentpassword{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#market{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#client_info{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#wish_list{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+#agent_id_update{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#rating_update{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#Update_rating{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#back{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#warehouse_id{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#tenant{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#create{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#calculate{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#BackButton{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#name{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#username{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#password1{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#password2{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#Owner_Name{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#Login_name{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#address{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#size{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#cost_per_day{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#create_warehouse{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#climate{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#Id_warehouse{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#price{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#update_commission{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#commission_field{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#owner_id{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#Ownerusername{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#Ownerpassword{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#create_warehouse{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 9px;
+    -fx-padding: 3 30 3 30;
+}
+
+#owner_reference{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#Update{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#Back{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#ID_fx{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#address_fx{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#cost_fx{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#size_fx{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#choice_box_fx{
+    -fx-border-color: #F64C72;
+    -fx-text-fill: #655246;
+    -fx-border-width: 0 0 1 0; // top, right, bottom, left;
+    -fx-prompt-text-fill: #655246;
+    -fx-background-color: transparent;
+}
+
+#Add{
+    -fx-background-color:#655246;
+    -fx-text-fill: #F64C72;
+    -fx-font-size: 14px;
+    -fx-padding: 3 30 3 30;
+}
+
+#Remove{
+    -fx-background-color:#655246;
     -fx-text-fill: #F64C72;
     -fx-font-size: 14px;
     -fx-padding: 3 30 3 30;

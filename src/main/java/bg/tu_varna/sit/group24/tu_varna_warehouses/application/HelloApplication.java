@@ -21,34 +21,41 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+try {
+
+    PropertyConfigurator.configure(HelloApplication.class.getResource(Constants.Configurations.LOG4j_PROPERTIES));
+    URL path = getClass().getResource(Constants.View.HELLO_VIEW);
+
+    if (path != null) {
+        Parent root = FXMLLoader.load(path);
+
+        Scene scene = new Scene(root);
+
+        scene.setFill(Color.TRANSPARENT);
+
+        stage.setTitle(Constants.Values.Title);
+        String css = this.getClass().getResource("/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/ApplicationStyle.css").toExternalForm();
+        scene.getStylesheets().add(css);
+        stage.setScene(scene);
+
+        stage.setResizable(false);
 
 
-        PropertyConfigurator.configure(HelloApplication.class.getResource(Constants.Configurations.LOG4j_PROPERTIES));
-        URL path= getClass().getResource(Constants.View.HELLO_VIEW);
+        //stage.setMaxWidth(780);
+        //stage.setMaxHeight(630);
 
-        if(path != null){
-            Parent root = FXMLLoader.load(path);
+        //stage.setWidth(611);
+        //stage.setHeight(508);
 
-            Scene scene = new Scene(root);
+        stage.show();
+    } else {
+        log.error("Sorry, the main fxml could not be loaded.");
+        System.exit(-1);
+    }
 
-            scene.setFill(Color.TRANSPARENT);
-
-            stage.setTitle(Constants.Values.Title);
-            stage.setScene(scene);
-
-            stage.setResizable(false);
-
-            //stage.setMaxWidth(780);
-            //stage.setMaxHeight(630);
-
-            //stage.setWidth(611);
-            //stage.setHeight(508);
-
-            stage.show();
-        }else{
-            log.error("Sorry, the main fxml could not be loaded.");
-            System.exit(-1);
-        }
+}catch(Exception ex){
+    System.out.println();
+}
     }
 
     public static void main(String[] args) {

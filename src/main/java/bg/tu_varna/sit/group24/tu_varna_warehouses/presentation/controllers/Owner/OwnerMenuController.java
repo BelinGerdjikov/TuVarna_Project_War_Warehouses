@@ -34,6 +34,11 @@ public class OwnerMenuController implements EventHandler<MouseEvent> {
 
 
     public void Reference(MouseEvent mouseEvent){
+        Stage stage = (Stage)backButton.getScene().getWindow();
+        CreatingNewWindows newWindows = new CreatingNewWindows();
+        URL path= getClass().getResource(Constants.Reference.OwnerReference);
+        newWindows.create(path,"Reference");
+        stage.hide();
 
     }
 

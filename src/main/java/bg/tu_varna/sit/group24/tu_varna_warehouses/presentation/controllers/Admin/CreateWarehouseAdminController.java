@@ -42,7 +42,7 @@ public class CreateWarehouseAdminController implements EventHandler<MouseEvent> 
 
     @FXML
     private void initialize(){
-
+//setting up the choice box
         climate.getItems().add("Cold");
         climate.getItems().add("Cool");
         climate.getItems().add("Hot");
@@ -66,7 +66,7 @@ public class CreateWarehouseAdminController implements EventHandler<MouseEvent> 
 
     }
 
-
+//creating a warehouse
     public void create(MouseEvent mouseEvent) {
 
         boolean valid = true;
@@ -78,7 +78,7 @@ public class CreateWarehouseAdminController implements EventHandler<MouseEvent> 
             Integer size1=Integer.parseInt(size.getText());
 
 
-
+//validation
             if(OwnerRepository.Owner_id_check(owner)==-1){
                 errorMessage.setText("Wrong ID");
                 valid=false;
@@ -95,7 +95,7 @@ public class CreateWarehouseAdminController implements EventHandler<MouseEvent> 
                 valid=false;
             }
 
-
+//calling a function to insert to table warehouse
             if (valid) {
                 WareHouseRepository.CreateWareHouse(address1, cost,size1, climate.getValue(), owner);
                 errorMessage.setText("The new warehouse is added");

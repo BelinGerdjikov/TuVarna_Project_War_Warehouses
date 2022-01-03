@@ -7,10 +7,22 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="723.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Admin.UpdateWarehouseController">
    <children>
+      <ImageView fitHeight="725.0" fitWidth="736.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/fagerhult_warehouse_aisle_induled_2.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="4.0" layoutY="2.0" opacity="0.65" prefHeight="637.0" prefWidth="719.0" style="-fx-background-color: silver;" />
+      <AnchorPane layoutX="9.0" layoutY="9.0" opacity="0.85" prefHeight="624.0" prefWidth="708.0" style="-fx-background-color: C99178;">
+         <children>
+            <Label fx:id="errorMessage" layoutX="167.0" layoutY="339.0" prefHeight="31.0" prefWidth="274.0" />
+         </children></AnchorPane>
       <TableView fx:id="Display" layoutX="15.0" layoutY="14.0" prefHeight="320.0" prefWidth="658.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
         <columns>
           <TableColumn fx:id="ID" prefWidth="75.0" text="ID" />
@@ -20,23 +32,42 @@
             <TableColumn fx:id="Climate" prefWidth="200.0" text="Climate" />
         </columns>
       </TableView>
-      <TextField fx:id="ID_fx" layoutX="185.0" layoutY="389.0" />
-      <TextField fx:id="address_fx" layoutX="185.0" layoutY="449.0" />
-      <TextField fx:id="cost_fx" layoutX="185.0" layoutY="512.0" />
-      <TextField fx:id="size_fx" alignment="CENTER_RIGHT" layoutX="185.0" layoutY="577.0" promptText="70" />
-      <Button fx:id="Update" layoutX="504.0" layoutY="462.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="87.0" text="Update" AnchorPane.bottomAnchor="207.0" AnchorPane.leftAnchor="504.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="462.0" />
-      <Button fx:id="Back" layoutX="504.0" layoutY="590.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="87.0" text="Back" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="504.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="590.0" />
-      <Label layoutX="53.0" layoutY="393.0" text="ID" />
-      <Label layoutX="53.0" layoutY="453.0" text="Address" />
-      <Label layoutX="53.0" layoutY="516.0" text="Cost" />
-      <Label layoutX="53.0" layoutY="581.0" text="Size" />
-      <Label layoutX="51.0" layoutY="647.0" text="Climate" />
-      <ChoiceBox fx:id="choice_box_fx" layoutX="185.0" layoutY="643.0" prefWidth="150.0" />
-      <Label layoutX="347.0" layoutY="582.0" text="sm" />
-      <CheckBox fx:id="address_check" layoutX="370.0" layoutY="453.0" mnemonicParsing="false" />
-      <CheckBox fx:id="Cost_check" layoutX="370.0" layoutY="516.0" mnemonicParsing="false" />
-      <CheckBox fx:id="Size_check" layoutX="370.0" layoutY="582.0" mnemonicParsing="false" />
-      <CheckBox fx:id="Climate_check" layoutX="370.0" layoutY="647.0" mnemonicParsing="false" />
-      <Label fx:id="errorMessage" layoutX="452.0" layoutY="381.0" />
+      <TextField fx:id="ID_fx" layoutX="185.0" layoutY="389.0" promptText="ID" />
+      <TextField fx:id="address_fx" layoutX="186.0" layoutY="428.0" promptText="Address" />
+      <TextField fx:id="cost_fx" layoutX="185.0" layoutY="470.0" promptText="Cost" />
+      <TextField fx:id="size_fx" alignment="CENTER_RIGHT" layoutX="186.0" layoutY="512.0" promptText="Size" />
+      <Button fx:id="Update" layoutX="504.0" layoutY="404.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="87.0" text="Update" AnchorPane.bottomAnchor="265.0" AnchorPane.leftAnchor="504.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="404.0" />
+      <Button fx:id="Back" layoutX="504.0" layoutY="497.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="87.0" text="Back" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="504.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="497.0" />
+      <ChoiceBox fx:id="choice_box_fx" layoutX="186.0" layoutY="550.0" prefWidth="150.0" />
+      <Label layoutX="336.0" layoutY="516.0" opacity="0.55" prefHeight="17.0" prefWidth="16.0" text="sm" />
+      <CheckBox fx:id="address_check" layoutX="370.0" layoutY="432.0" mnemonicParsing="false" />
+      <CheckBox fx:id="Cost_check" layoutX="370.0" layoutY="474.0" mnemonicParsing="false" />
+      <CheckBox fx:id="Size_check" layoutX="370.0" layoutY="516.0" mnemonicParsing="false" />
+      <CheckBox fx:id="Climate_check" layoutX="370.0" layoutY="554.0" mnemonicParsing="false" />
+      <ImageView fitHeight="286.0" fitWidth="22.0" layoutX="156.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="152.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/maps.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="152.0" layoutY="469.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/price-tag.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="163.0" fitWidth="22.0" layoutX="152.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/house.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="131.0" fitWidth="22.0" layoutX="152.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Photos/temperature.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

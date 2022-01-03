@@ -15,8 +15,7 @@ public class LoginRepository {
 
 
     public static boolean isUsedName(String username){
-
-
+//Checking if the username is already created
         try{
 
             conn=DataBaseConnection.getConnection();
@@ -40,6 +39,7 @@ public class LoginRepository {
 
 
     public static int CreateLogin(String login_name,String pass){
+        //Creating a login with which you can log to the account
         try{
 
             conn=DataBaseConnection.getConnection();
@@ -61,6 +61,7 @@ public class LoginRepository {
 
 
     public static int login_cheak(String user,String pass){
+        //Checking if the username and password is correct
 
         try{
 

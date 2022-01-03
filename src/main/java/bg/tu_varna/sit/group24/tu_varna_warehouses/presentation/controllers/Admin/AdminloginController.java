@@ -42,7 +42,8 @@ public class AdminloginController implements EventHandler<MouseEvent> {
     @Override
     public void handle(MouseEvent mouseEvent) {
 
-
+//if the username and password is correct and the corresponding account is found
+        //go to the admin menu
         if(AdminRepository.loginINAdmin(LoginRepository.login_cheak(Adminusername.getText(),Adminpassword.getText()))>0){
             Stage stage = (Stage)loginButton.getScene().getWindow();
             CreatingNewWindows newWindows = new CreatingNewWindows();
@@ -57,7 +58,7 @@ public class AdminloginController implements EventHandler<MouseEvent> {
 
     }
 
-
+//return to the starting menu
     public void Back(MouseEvent mouseEvent) {
 
         Stage stage = (Stage)backbutton.getScene().getWindow();

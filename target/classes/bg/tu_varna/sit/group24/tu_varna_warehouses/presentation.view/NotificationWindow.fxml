@@ -4,15 +4,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="162.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.view.NotificationWindow">
+<AnchorPane prefHeight="164.0" prefWidth="601.0" style="-fx-background-color: C99178;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.controllers.Agent.NotificationWindowController">
    <children>
-      <Label layoutX="237.0" layoutY="14.0" text="Notification">
+      <AnchorPane layoutX="28.0" layoutY="24.0" opacity="0.41" prefHeight="114.0" prefWidth="543.0" style="-fx-background-color: silver;" />
+      <Label layoutX="237.0" layoutY="29.0" opacity="0.55" prefHeight="50.0" prefWidth="125.0" text="Notification">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="107.0" layoutY="81.0" text="One or more of the warehouse in your wish list is/are available">
+      <Label layoutX="107.0" layoutY="81.0" opacity="0.55" text="One or more of the warehouse in your wish list is/are available">
          <font>
             <Font size="14.0" />
          </font>

@@ -72,7 +72,7 @@ public class AgentSortingContract implements EventHandler<MouseEvent> {
         //setTableView();
 
 
-
+//Setting up all the column in the tableview
         Agent_id.setCellValueFactory(new PropertyValueFactory<>("Id_agent"));
         Agnet_name.setCellValueFactory(new PropertyValueFactory<>("Agent_name"));
         Commission.setCellValueFactory(new PropertyValueFactory<>("Commission"));
@@ -85,7 +85,7 @@ public class AgentSortingContract implements EventHandler<MouseEvent> {
     }
 
 
-
+//Back to the Agent menu
     @Override
     public void handle(MouseEvent mouseEvent) {
         Stage stage = (Stage)back.getScene().getWindow();
@@ -101,11 +101,12 @@ public class AgentSortingContract implements EventHandler<MouseEvent> {
 
 
         try{
+
         int id = Integer.parseInt(agent_id_update.getText());
 
         double rating = Double.parseDouble(rating_update.getText());
 
-
+        //validating the rating
         if (rating > -1.0 && rating < 10.1) {
 
             AgentRepository.update_rating(id, rating);
@@ -113,9 +114,10 @@ public class AgentSortingContract implements EventHandler<MouseEvent> {
             ErrorMessage.setText("The rating need to be between 0 and 10");
         }
 
-
+//Cleaning the TableView
         Display.getItems().clear();
         try {
+            //adding the new data
             setTableView();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -126,6 +128,7 @@ public class AgentSortingContract implements EventHandler<MouseEvent> {
     }
 
     public void setTableView() throws SQLException {
+        //Setting / resetting the information in the TableView
         try {
             Display.getItems().clear();
             conn = DataBaseConnection.getConnection();
@@ -143,7 +146,7 @@ public class AgentSortingContract implements EventHandler<MouseEvent> {
 
                 if(agg!=null)
                 oblist.add(new AgentModel(agg.getAgent_id(), rs.getString("agent_name"), agg.getCommission(), rs.getDouble("rating"),agg.getDeals(),agg.getProfit()));
-
+//Adding all the AgentModels in the TableView
             }
 
 

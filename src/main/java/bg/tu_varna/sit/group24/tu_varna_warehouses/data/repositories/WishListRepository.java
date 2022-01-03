@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class WashListRepository {
+public class WishListRepository {
     static Connection conn;
     static PreparedStatement create;
 
@@ -38,6 +38,8 @@ public class WashListRepository {
 
 
     public static String Add_WishList(int id) {
+
+        //adding a warehouse on the wish list
         try{
 
             if(WareHouseRepository.warehouse_exist(id)) {
@@ -70,6 +72,7 @@ public class WashListRepository {
 
 
     public static void Remove(int id) {
+        //removing a warehouse of the wish list
         try {
             conn= DataBaseConnection.getConnection();
 
@@ -85,5 +88,34 @@ public class WashListRepository {
         } catch (Exception ex) {
             ex.getMessage();
         }
+    }
+
+
+    public static boolean availableInWishList(int agent_id){
+        //Checking if the warehouse is already added in to the wishlist
+        try {
+            conn = DataBaseConnection.getConnection();
+
+            String sql = "SELECT * FROM wishlist WHERE agent_id=" + agent_id ;
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery(sql);
+
+
+
+            while(rs.next()){
+                String sql2 = "SELECT * FROM warehouse WHERE warehouse=" + rs.getInt("warehouse")+" and is_available=true";
+                PreparedStatement ps2 = conn.prepareStatement(sql2);
+                ResultSet rs2 = ps.executeQuery(sql2);
+
+                while(rs2.next()) {
+                    return true;
+                }
+            }
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
+        return false;
     }
 }

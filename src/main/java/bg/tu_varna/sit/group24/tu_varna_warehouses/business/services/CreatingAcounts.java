@@ -4,6 +4,8 @@ public class CreatingAcounts {
 
 
     public static String input_validation(String name1,String username1,String pass1,String pass2){
+        //validating when the Admin create agent or owner account
+
         if(name1.length()<8){
             return "The full name must be at least 8 letters";
 

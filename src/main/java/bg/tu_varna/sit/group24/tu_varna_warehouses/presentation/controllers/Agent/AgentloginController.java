@@ -45,12 +45,14 @@ public class AgentloginController implements EventHandler<MouseEvent> {
     @Override
     public void handle(MouseEvent mouseEvent) {
 
-
+//getting the login id
         int temp=LoginRepository.login_cheak(Agentusername.getText(),Agentpassword.getText());
         System.out.println(temp);
+        //getting the login id
         int temp2=AgentRepository.loginINAgent(temp);
         System.out.println(temp);
         Constants.ID_save.agent=temp2;
+        //getting the login id
         if(temp2>0){
             Stage stage = (Stage)backbutton.getScene().getWindow();
             CreatingNewWindows newWindows = new CreatingNewWindows();

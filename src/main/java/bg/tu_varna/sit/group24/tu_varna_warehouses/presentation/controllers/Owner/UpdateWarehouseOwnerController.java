@@ -90,7 +90,7 @@ public class UpdateWarehouseOwnerController implements EventHandler<MouseEvent> 
         }catch (Exception exception){
             id_temp=0;
         }
-
+//validating
         if(id_temp>0) {
             if (address_check.isSelected()) {
                 if (address_fx.getText().length() > 4) {
@@ -159,18 +159,22 @@ public class UpdateWarehouseOwnerController implements EventHandler<MouseEvent> 
         Back.setOnMouseClicked(this::Back);
 
         setTableView();
-
+//setting up the columns to the tableview
         ID.setCellValueFactory(new PropertyValueFactory<>("ID"));
         Address.setCellValueFactory(new PropertyValueFactory<>("Address"));
         Size.setCellValueFactory(new PropertyValueFactory<>("Size"));
         Cost.setCellValueFactory(new PropertyValueFactory<>("Cost"));
         Climate.setCellValueFactory(new PropertyValueFactory<>("Climate"));
 
+
+        //setting choicebox
         choice_box_fx.getItems().add("Cold");
         choice_box_fx.getItems().add("Cool");
         choice_box_fx.getItems().add("Hot");
 
         choice_box_fx.setValue("Cool");
+
+        setTableView();
 
     }
 
@@ -179,6 +183,7 @@ public class UpdateWarehouseOwnerController implements EventHandler<MouseEvent> 
     public void setTableView() throws SQLException {
         conn= DataBaseConnection.getConnection();
 
+//Setting / resetting the information in the TableView
         String sql = "SELECT warehouse_id,address,cost,size,climate FROM warehouse";
         PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery(sql);

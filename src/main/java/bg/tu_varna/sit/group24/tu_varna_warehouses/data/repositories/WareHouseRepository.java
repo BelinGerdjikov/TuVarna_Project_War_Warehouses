@@ -25,6 +25,7 @@ public class WareHouseRepository {
     }
 
     public static void UpdateWareHouseSize(int ID,int size){
+        //Updating the warehouse size
         try{
             conn= DataBaseConnection.getConnection();
 
@@ -43,6 +44,7 @@ public class WareHouseRepository {
     }
 
     public static void UpdateWareHouseAddress(int ID,String address){
+        //Updating the warehouse address
         try{
             conn= DataBaseConnection.getConnection();
 
@@ -60,6 +62,7 @@ public class WareHouseRepository {
     }
 
     public static void UpdateWareHouseCost(int ID,Double cost){
+        //Updating the warehouse cost per day
         try{
             conn= DataBaseConnection.getConnection();
 
@@ -76,6 +79,7 @@ public class WareHouseRepository {
     }
 
     public static void UpdateWareHouseClimate(int ID,String climate){
+        //Updating the warehouse climate
         try{
             conn= DataBaseConnection.getConnection();
 
@@ -93,7 +97,7 @@ public class WareHouseRepository {
 
 
     public static void CreateWareHouse(String address1,double cost_per_day,int size1,String climate1,int owner_id1){
-
+//Creating a warehouse
             try{
                 conn= DataBaseConnection.getConnection();
 
@@ -114,7 +118,7 @@ public class WareHouseRepository {
 
 
     public static boolean warehouse_exist(int warehouse_ID){
-
+//Checking if the given warehouse id exist
         try{
 
             conn= DataBaseConnection.getConnection();
@@ -138,7 +142,7 @@ public class WareHouseRepository {
 
 
     public static int finding_owner(int warehouse_ID){
-
+//finding the Owner of the warehouse
         try{
 
             conn= DataBaseConnection.getConnection();
@@ -162,7 +166,7 @@ public class WareHouseRepository {
 
 
     public static double finding_price(int warehouse_ID){
-
+//finding the price per day for the warehouse
         try{
 
             conn= DataBaseConnection.getConnection();
@@ -190,6 +194,7 @@ public class WareHouseRepository {
 
 
     private static void setupForRefresh(){
+        //setting all the warehouses available
 
         try {
             conn = DataBaseConnection.getConnection();
@@ -206,22 +211,22 @@ public class WareHouseRepository {
     }
 
     public static void refresh(){
-
+//Setting all the unavailable warehouses unavailable
         setupForRefresh();
         try {
             conn= DataBaseConnection.getConnection();
 
-            LocalDate now = LocalDate.now();
+            LocalDate now = LocalDate.now();//a date
 
             String testing=now.toString();
-
+//query that gives all the unavailable warehouses
         String sql = "SELECT * FROM contract where start_date<='"+testing+"' and end_date>='"+testing+"'";
         PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery(sql);
 
 
         while(rs.next()){
-
+//query that makes all the unavailable warehouses unavailable
             String sql2 ="UPDATE warehouse SET is_available=0 WHERE warehouse_id="+rs.getInt("warehouse_id");
             create = conn.prepareStatement(sql2);
             create.executeUpdate(sql2);

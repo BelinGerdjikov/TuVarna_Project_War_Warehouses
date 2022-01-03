@@ -100,7 +100,7 @@ public class ContractController implements EventHandler<MouseEvent> {
         climate.setCellValueFactory(new PropertyValueFactory<>("Climate"));
         setTableView();
 
-//int dayssss=startDate.-endDate;
+
 
 
     }
@@ -164,12 +164,14 @@ public class ContractController implements EventHandler<MouseEvent> {
 
 
     private void create(MouseEvent mouseEvent) {
+        //Creating Contract
         boolean valid=true;
         try {
 
             startDate=startdate.getValue();
             endDate=enddate.getValue();
 
+            //validating
             if (!(Integer.parseInt(warehouse_id.getText()) > 0)) {
                 valid=false;
                 errrorMessage.setText("Wrong ID");
@@ -188,6 +190,7 @@ public class ContractController implements EventHandler<MouseEvent> {
 
             int days=(startDate.compareTo(endDate)*-1+1);
 
+            //Finding the owner of the warehouse
             int owner= WareHouseRepository.finding_owner(Integer.parseInt(warehouse_id.getText()));
 
 
@@ -198,7 +201,7 @@ public class ContractController implements EventHandler<MouseEvent> {
             full_price=full_price+(full_price*((AgentRepository.get_commission(Constants.ID_save.agent)))/100);
 
             if(valid){
-                errrorMessage.setText("GOOOOOOOOOOOD");
+                errrorMessage.setText("The contract is created");
                 ContractRepository.CreateContract(tenant.getText(),Constants.ID_save.agent,owner,Integer.parseInt(warehouse_id.getText()),startDate.toString(),endDate.toString(),full_price);
                 //ContractRepository.CreateContract("Belin",9,3,3,"2021-12-22","2021-12-24",300.5);
                 WareHouseRepository.refresh();
@@ -215,6 +218,7 @@ public class ContractController implements EventHandler<MouseEvent> {
 
 
     public void setTableView() throws SQLException {
+        //Setting / resetting the information in the TableView
         conn= DataBaseConnection.getConnection();
 
         String sql = "SELECT warehouse_id,address,cost,size,climate FROM warehouse where is_available=true";

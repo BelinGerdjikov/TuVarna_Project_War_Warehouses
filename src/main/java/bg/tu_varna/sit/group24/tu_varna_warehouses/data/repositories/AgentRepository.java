@@ -29,6 +29,7 @@ public class AgentRepository {
 
 
     public static void CreateAgent(String agent_name1,int login_id1){
+        //Create an agent in the database
         try{
             conn= DataBaseConnection.getConnection();
 
@@ -44,7 +45,7 @@ public class AgentRepository {
     }
 
     public static int loginINAgent(int loginId){
-
+        //finding the account corresponding to the login table
         try{
 
             conn= DataBaseConnection.getConnection();
@@ -67,6 +68,7 @@ public class AgentRepository {
 
 
     public static int get_commission(int agent_ID){
+        //returning the commission of the agent
 
         try{
 
@@ -91,14 +93,15 @@ public class AgentRepository {
 
 
     public static ProfitAgent get_deal_profit(int agent_ID,int commission){
+        //getting the profit from the contract table
         ProfitAgent prof=new ProfitAgent(0,0.0,-1,-1);
         try{
 
             conn= DataBaseConnection.getConnection();
-
+            //finding all the contract that agent created
             String sql = "SELECT * FROM contract where agent_id="+agent_ID;
             PreparedStatement ps = conn.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery(sql);
+            ResultSet rs = ps.executeQuery(sql);//array of all the findings
 
 
             double x=0;
@@ -110,7 +113,9 @@ public class AgentRepository {
                 y=rs.getDouble("cost");
                 deals++;
                 x=y*100/(100+commission);
+                //a math formula that all the commission money the agent made
                 profit=profit+(y-x);
+
 
             }
 
@@ -118,6 +123,7 @@ public class AgentRepository {
                 prof.setAgent_id(agent_ID);
                 prof.setDeals(deals);
                 prof.setCommission(commission);
+                //adding all the information in a model ProfitAgent and returning the model
                 return prof;
 
 
@@ -132,6 +138,7 @@ public class AgentRepository {
 
 
     public static void update_rating(int agent_id,double rating){
+        //from a given agent id the admin can change the rating
         try {
             conn= DataBaseConnection.getConnection();
 
@@ -149,6 +156,7 @@ public class AgentRepository {
 
 
     public static void update_commission(int commission){
+        //updating the commission from a given agent ID
 
         try {
             conn= DataBaseConnection.getConnection();

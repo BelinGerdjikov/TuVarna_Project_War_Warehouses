@@ -16,10 +16,16 @@ public class Constants {
 
         public static final String ReferenceOwner="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/ReferenceOwner.fxml";
 
+        public static final String OwnerReference="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/OwnerReference.fxml";
+
     }
 
     public static class Sorting{
         public static final String sort="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/AgentSorting.fxml";
+    }
+
+    public static class Info{
+        public static final String info="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/Client_info.fxml";
     }
 
     public static class Update{
@@ -39,6 +45,8 @@ public class Constants {
         public static final String MenuWindowAgent="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/AgentMenu.fxml";
 
         public static final String MenuWindowOwner="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/OwnerMenu.fxml";
+
+        public static final String MenuWindowNotification="/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/NotificationWindow.fxml";
     }
 
     public static class MenuCreate {
