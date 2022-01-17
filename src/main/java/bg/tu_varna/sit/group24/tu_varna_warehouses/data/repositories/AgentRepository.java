@@ -1,6 +1,5 @@
 package bg.tu_varna.sit.group24.tu_varna_warehouses.data.repositories;
 
-import bg.tu_varna.sit.group24.tu_varna_warehouses.common.Constants;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.data.access.DataBaseConnection;
 import bg.tu_varna.sit.group24.tu_varna_warehouses.presentation.models.ProfitAgent;
 
@@ -62,6 +61,7 @@ public class AgentRepository {
         } catch(SQLException e) {
             e.printStackTrace();
         }
+
 
         return -1;
     }
@@ -155,13 +155,13 @@ public class AgentRepository {
 
 
 
-    public static void update_commission(int commission){
+    public static void update_commission(int commission,int agent_id){
         //updating the commission from a given agent ID
 
         try {
             conn= DataBaseConnection.getConnection();
 
-            String sql ="UPDATE agent SET commission_proc="+commission+" where agent_id="+ Constants.ID_save.agent;
+            String sql ="UPDATE agent SET commission_proc="+commission+" where agent_id="+ agent_id;
             create = conn.prepareStatement(sql);
             create.executeUpdate(sql);
 

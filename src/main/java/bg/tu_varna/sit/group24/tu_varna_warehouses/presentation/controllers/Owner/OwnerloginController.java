@@ -47,6 +47,8 @@ public class OwnerloginController implements EventHandler<MouseEvent>
         //getting the login id
         //getting the login id
         Constants.ID_save.owner=OwnerRepository.loginINOwner(LoginRepository.login_cheak(Ownerusername.getText(),Ownerpassword.getText()));
+
+        System.out.println(Constants.ID_save.owner);
         //getting the login id
         if(Constants.ID_save.owner>0){
             Stage stage = (Stage)loginButton.getScene().getWindow();

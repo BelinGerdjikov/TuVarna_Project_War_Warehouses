@@ -79,7 +79,7 @@ public class OwnerRefenenceController implements EventHandler<MouseEvent> {
 
         //Setting / resetting the information in the TableView
 
-        String sql = "SELECT warehouse_id,cost FROM warehouse";
+        String sql = "SELECT warehouse_id,cost FROM warehouse where owner_id="+Constants.ID_save.owner;
         PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery(sql);
 

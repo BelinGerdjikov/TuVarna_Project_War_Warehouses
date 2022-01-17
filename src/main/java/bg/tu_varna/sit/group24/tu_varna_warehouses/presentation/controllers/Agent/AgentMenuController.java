@@ -80,7 +80,7 @@ public class AgentMenuController implements EventHandler<MouseEvent> {
         if(comm>-1&&comm<21){
 
 //Updating the repository
-        AgentRepository.update_commission(comm);
+        AgentRepository.update_commission(comm,Constants.ID_save.agent);
 
         int temp=(AgentRepository.get_commission(Constants.ID_save.agent));
         comm_now.setText(String.valueOf(temp)+"%");

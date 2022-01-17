@@ -19,8 +19,11 @@ public class CreatingNewWindows {
             stage.setTitle(Title);//renaming the stage
             String css = this.getClass().getResource("/bg/tu_varna/sit/group24/tu_varna_warehouses/presentation.view/ApplicationStyle.css").toExternalForm();//getting the full address of the file
             scene.getStylesheets().add(css);//addling the css file
+            stage.setResizable(false);
             stage.setScene(scene);
             stage.show();//showing the window
+
+
 
         }
         catch(IOException ex){//if the program crash

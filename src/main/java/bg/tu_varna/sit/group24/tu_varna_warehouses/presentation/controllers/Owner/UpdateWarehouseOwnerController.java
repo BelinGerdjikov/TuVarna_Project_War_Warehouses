@@ -184,7 +184,7 @@ public class UpdateWarehouseOwnerController implements EventHandler<MouseEvent> 
         conn= DataBaseConnection.getConnection();
 
 //Setting / resetting the information in the TableView
-        String sql = "SELECT warehouse_id,address,cost,size,climate FROM warehouse";
+        String sql = "SELECT warehouse_id,address,cost,size,climate FROM warehouse where owner_id="+Constants.ID_save.owner;
         PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery(sql);
 

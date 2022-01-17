@@ -37,18 +37,18 @@ public class WishListRepository {
     }
 
 
-    public static String Add_WishList(int id) {
+    public static String Add_WishList(int id,int agent_id) {
 
         //adding a warehouse on the wish list
         try{
 
             if(WareHouseRepository.warehouse_exist(id)) {
-                System.out.println("agent: "+ Constants.ID_save.agent+" ID"+id);
+
                 if(!WishList_already_exist(Constants.ID_save.agent,id)) {
 
                     conn = DataBaseConnection.getConnection();
 
-                    String sql = "INSERT INTO wishlist (agent_id,warehouse_id) VALUES (" + Constants.ID_save.agent + ","+id+")";
+                    String sql = "INSERT INTO wishlist (agent_id,warehouse_id) VALUES (" + agent_id + ","+id+")";
 
 
                     create = conn.prepareStatement(sql);
@@ -71,13 +71,13 @@ public class WishListRepository {
     }
 
 
-    public static void Remove(int id) {
+    public static void Remove(int id,int agent_id) {
         //removing a warehouse of the wish list
         try {
             conn= DataBaseConnection.getConnection();
 
 
-            String sql = "DELETE FROM wishlist WHERE agent_id="+Constants.ID_save.agent+" and warehouse_id="+id;
+            String sql = "DELETE FROM wishlist WHERE agent_id="+agent_id+" and warehouse_id="+id;
 
 
             create = conn.prepareStatement(sql);

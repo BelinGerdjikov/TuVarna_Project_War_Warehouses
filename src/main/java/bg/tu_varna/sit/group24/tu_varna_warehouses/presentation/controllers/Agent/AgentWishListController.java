@@ -104,7 +104,7 @@ public class AgentWishListController implements EventHandler<MouseEvent> {
             int id=Integer.parseInt(warehouse_id.getText());
 
 
-            errorMassage.setText(WishListRepository.Add_WishList(id));
+            errorMassage.setText(WishListRepository.Add_WishList(id,Constants.ID_save.agent));
 
             setTableView2();
 
@@ -120,7 +120,7 @@ public class AgentWishListController implements EventHandler<MouseEvent> {
 
             int id=Integer.parseInt(warehouse_id.getText());
 
-            WishListRepository.Remove(id);
+            WishListRepository.Remove(id,Constants.ID_save.agent);
 
 
             setTableView2();

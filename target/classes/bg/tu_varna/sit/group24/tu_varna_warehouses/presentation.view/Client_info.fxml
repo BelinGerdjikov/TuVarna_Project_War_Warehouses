@@ -13,12 +13,14 @@
          </image>
       </ImageView>
       <AnchorPane layoutX="177.0" layoutY="101.0" opacity="0.65" prefHeight="244.0" prefWidth="256.0" style="-fx-background-color: silver;" />
-      <AnchorPane layoutX="183.0" layoutY="107.0" opacity="0.85" prefHeight="232.0" prefWidth="244.0" style="-fx-background-color: C99178;" />
+      <AnchorPane layoutX="183.0" layoutY="107.0" opacity="0.85" prefHeight="232.0" prefWidth="244.0" style="-fx-background-color: C99178;">
+         <children>
+            <Button fx:id="Back" layoutX="70.0" layoutY="158.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="105.0" text="Back" />
+         </children></AnchorPane>
       <ImageView fitHeight="99.0" fitWidth="101.0" layoutX="255.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Photos/work-in-progress.png" />
          </image>
       </ImageView>
-      <Button fx:id="Back" layoutX="268.0" layoutY="265.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Back" />
    </children>
 </AnchorPane>

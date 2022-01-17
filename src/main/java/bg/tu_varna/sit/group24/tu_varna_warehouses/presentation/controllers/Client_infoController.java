@@ -25,7 +25,7 @@ public class Client_infoController implements EventHandler<MouseEvent> {
     public void handle(MouseEvent mouseEvent) {
         Stage stage = (Stage)Back.getScene().getWindow();
         CreatingNewWindows newWindows = new CreatingNewWindows();
-        URL path= getClass().getResource(Constants.MenuWindow.MenuWindowOwner);
+        URL path= getClass().getResource(Constants.MenuWindow.MenuWindowAgent);
         newWindows.create(path,"Owner Menu");
         stage.hide();
     }

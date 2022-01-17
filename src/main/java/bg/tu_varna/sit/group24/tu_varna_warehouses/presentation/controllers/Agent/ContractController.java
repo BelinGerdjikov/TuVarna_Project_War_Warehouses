@@ -128,18 +128,19 @@ public class ContractController implements EventHandler<MouseEvent> {
                 errrorMessage.setText("Unvalid time frame");
             }
 
-            int days=(startDate.compareTo(endDate)*-1+1);
 
-            int owner= WareHouseRepository.finding_owner(Integer.parseInt(warehouse_id.getText()));
-            //System.out.println(days);.
-
-            double full_price=0;
-            full_price=WareHouseRepository.finding_price(Integer.parseInt(warehouse_id.getText()))*days;
-
-            full_price=full_price+(full_price*((AgentRepository.get_commission(Constants.ID_save.agent)))/100);
 
 
             if(valid){
+                int days=(startDate.compareTo(endDate)*-1+1);
+
+                int owner= WareHouseRepository.finding_owner(Integer.parseInt(warehouse_id.getText()));
+                //System.out.println(days);.
+
+                double full_price=0;
+                full_price=WareHouseRepository.finding_price(Integer.parseInt(warehouse_id.getText()))*days;
+
+                full_price=full_price+(full_price*((AgentRepository.get_commission(Constants.ID_save.agent)))/100);
                 Expence.setText("The cost will be "+full_price+"$");
             }
 

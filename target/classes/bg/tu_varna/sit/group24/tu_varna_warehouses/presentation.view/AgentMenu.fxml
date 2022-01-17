@@ -29,7 +29,7 @@
       <Button fx:id="update_commission" layoutX="495.0" layoutY="164.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Update" />
       <Label layoutX="209.0" layoutY="127.0" opacity="0.65" text="Commission now" />
       <Label fx:id="comm_now" layoutX="319.0" layoutY="119.0" opacity="0.65" prefHeight="25.0" prefWidth="274.0" />
-      <Label fx:id="errorMessage" layoutX="382.0" layoutY="200.0" opacity="0.65" prefHeight="17.0" prefWidth="43.0" text="Label" />
+      <Label fx:id="errorMessage" layoutX="314.0" layoutY="200.0" opacity="0.65" prefHeight="17.0" prefWidth="265.0" text="Label" />
       <Button fx:id="wish_list" layoutX="46.0" layoutY="235.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="140.0" text="Wish List" />
       <Button fx:id="backButton" layoutX="46.0" layoutY="300.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="140.0" text="Back" />
    </children>
